@@ -93,263 +93,173 @@ body {
         }
     }
 
-
-
-}
-
-
-
-
-@media (min-aspect-ratio:16/9) {
-    .Background-video{
-        width: 100%;
-        height:auto;
-    }
-    
-}
-
-@media (max-aspect-ratio:16/9) {
-    .Background-video{
-        width: auto;
-        height: 100%;
-    }
-    
-}
-
-@media (max-width: 1280px) {
-    .Background-video {
-        display:none;
-    }
-    body {
-        background: url('');
-        background-size: cover;
-    }
-
-}
-
-/* -------------------------------------------------------------------    SEZIONE HOME   -----------------------------------------------------------------------------------*/
-.Home {
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    height: 100vh;   
-    padding: 0 10%;
-    
-    
-
-}
-
-
-.Contenuto-home {
-    
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff8e;
-    max-width: 800px;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-    border-radius: 50px;
-    
-}
-
-.TitoloNome {
-    display: flex;
-    flex-direction: row;
-    
-}
-
-.Contenuto-home h1{
-    font-size: 100px;
-    font-family: 'Hikaru', sans-serif;
-    font-weight: lighter;
-    margin: 10px;
-}
-.Contenuto-home h1::first-letter{
-    font-size: 130px;
-    font-family: 'Hikaru', sans-serif;
-    font-weight: lighter;
-    
-   
-}
-
-
-
-
-.Contenuto-home h3{
-    font-size: 30px;
-    color:#eecf1d;
-    
-}
-
-.Contenuto-home h3::first-letter{
-    font-size: 40px;
-    color:#eecf1d;
-    
-}
-
-.Contenuto-home p{
-    font-size: 20px;
-    
-    
-}
-
-.Logo-Home {
-
-    margin:10px;
-    padding:0;
-   
-    
-}
-
-.sfondologo .rombo{
-    
-    scale: 100%;
-    margin:0;
-    padding:0;
-    z-index: -1;
-    position: absolute;
-    
-
-}
-
-
-
-.sfondologo {
-    width:600px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:0;
-    transition: 0.3s;
-}
-
-.sfondologo:hover {
-    transform: translateY(-10px);
-    scale:105%;
-
-}
-
-.sfondologo .logoVV{
-    scale:30%;
-    margin:0;
-    padding:0;
-    text-align: center;
-}
-
-
-
-
-
-
-/* Ora penso al logo con il rombo in sottofondo */
-
-
-
-
-@media (max-width: 1280px) {
-
-    .Home {
-
-        background-image: url(../img/sfondo-tel.png);
-        height: 900px;
-        
-        
-        
-    
-    }
+    /* -------------------------------------------------------------------    SEZIONE HOME   -----------------------------------------------------------------------------------*/
 
     .Home {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-    }
-    
-    
-    .Contenuto-home {
-    
-        display: flex;
-        flex-direction: column;
-        background-color: #ffffff8e;
-        margin:100px 0 0 0 ;
-        align-items: center;
+        height: 100vh;   
+        padding: 0 10%;
         
-        max-width: 300px;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        border-radius: 10px;
-    }
-    .Contenuto-home h1{
-        font-size: 40px;
-        font-family: 'Hikaru', sans-serif;
-        font-weight: lighter;
-        margin: 4px;
-    }
-
-    .Contenuto-home h1::first-letter{
-        font-size: 47px;
-        font-family: 'Hikaru', sans-serif;
-        font-weight: lighter;
+        .Contenuto-home {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff8e;
+            max-width: 800px;
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+            border-radius: 50px;
+            
+            .TitoloNome {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            h1 {
+                font-size: 100px;
+                font-family: 'Hikaru', sans-serif;
+                font-weight: lighter;
+                margin: 10px;
+                
+                &::first-letter {
+                    font-size: 130px;
+                    font-family: 'Hikaru', sans-serif;
+                    font-weight: lighter;
+                }
+            }
+            
+            h3 {
+                font-size: 30px;
+                color:#eecf1d;
+                
+                &::first-letter {
+                    font-size: 40px;
+                    color:#eecf1d;
+                }
+            }
+            
+            p {
+                font-size: 20px;
+            }
+            
+            .Logo-Home {
+                margin:10px;
+                padding:0;
+                
+                .sfondologo {
+                    width:600px;
+                    height: 600px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding:0;
+                    transition: 0.3s;
+                    
+                    &:hover {
+                        transform: translateY(-10px);
+                        scale:105%;
+                    }
+                    
+                    .logoVV {
+                        scale:30%;
+                        margin:0;
+                        padding:0;
+                        text-align: center;
+                    }
+                    
+                    .rombo {
+                        scale: 100%;
+                        margin:0;
+                        padding:0;
+                        z-index: -1;
+                        position: absolute;
+                        
+                        @media (max-width: 1280px) {
+                            scale: 38%;
+                            z-index: 1;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+        }
         
-       
+        @media (max-width: 1280px) {
+            background-image: url(../img/sfondo-tel.png);
+            height: 900px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            .Contenuto-home {
+                display: flex;
+                flex-direction: column;
+                background-color: #ffffff8e;
+                margin:100px 0 0 0 ;
+                align-items: center;
+                max-width: 300px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                border-radius: 10px;
+                
+                h1 {
+                    font-size: 40px;
+                    font-family: 'Hikaru', sans-serif;
+                    font-weight: lighter;
+                    margin: 4px;
+                    
+                    &::first-letter {
+                        font-size: 47px;
+                        font-family: 'Hikaru', sans-serif;
+                        font-weight: lighter;
+                    }
+                }
+                
+                h3 {
+                    font-size: 20px;
+                    color:#eecf1d;
+                    
+                    &::first-letter {
+                        font-size: 25px;
+                        color:#eecf1d;
+                    }
+                }
+                
+                p {
+                    font-size: 19px;
+                    text-align: center;
+                    margin-top: 10px;
+                }
+                
+                .sfondologo {
+                    width:300px;
+                    height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding:0;
+                    
+                    .logoVV {
+                        scale:10%;
+                        margin:0;
+                        padding:0;
+                        text-align: center;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
     }
-    .Contenuto-home h3{
-        font-size: 20px;
-        color:#eecf1d;
-        
-    }
-    .Contenuto-home h3::first-letter{
-        font-size: 25px;
-        color:#eecf1d;
-        
-    }
-    
-    .Contenuto-home p{
-        font-size: 19px;
-        text-align: center;
-        margin-top: 10px;
-
-        
-        
-    }
-
-    .sfondologo .rombo{
-    
-        scale: 38%;
-        margin:0;
-        padding:0;
-        z-index: 1;
-        position: absolute;
-    
-    }
-    
-    .sfondologo {
-        width:300px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding:0;
-    }
-    
-    .sfondologo .logoVV{
-        scale:10%;
-        margin:0;
-        padding:0;
-        text-align: center;
-        z-index: 2;
-    }
-
-
 
 }
+
 
 
 /* -------------------------------------------------------------------    SEZIONE ABOUT-ME   -----------------------------------------------------------------------------------*/
