@@ -212,8 +212,15 @@
             </div>
         </section>
 
-        <!-- Sezione Lavori e Progetti -->
+        <?php
+       
+        $progetti_json = file_get_contents('Lavori-progetti.json');  // PRNEDO IL CONTENUTO FILE SCRITTO NEL FILE JSON 
 
+       
+        $progetti = json_decode($progetti_json, true);  // DECODIFICO JSON IN PHP
+        ?>
+
+        <!-- Sezione Lavori e Progetti -->
         <section class="Lavori" id="Portfolio">
             <div class="container">
                 <div class="Titolo-sezione-prj">
@@ -222,143 +229,73 @@
                 <h6><i>Ruolo nel progetto:</i></h6>
             </div>
 
-            <div class="Bottoni-Lavori">  <!--quando imparo il jss farò in modo di poter cambiare l 'ordine dei lavori in base al ruolo svolto in esso'-->
-                <button type="button" class="active">All</button>
-                <button type="button" >Web Design </button>
-                <button type="button" >Web Master </button>
-                <button type="button" >Backend Developer </button>
-                <button type="button" >Fontend Developer </button>
-                <button type="button" >Fullstack Developer </button>
+            <div class="Bottoni-Lavori"> <!-- GENERO I BOTTONI DI FILTRO IN BASE ALLE CATEGORIE CHE HO SCRITTO DISPONIBILI NEL JSON--->
                 
+                <?php
+                // Funzione per ottenere un array univoco dei ruoli dei progetti
+                function getRuoliUnici($progetti)
+                {
+                    $ruoli = array_column($progetti, 'ruolo');
+                    $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY
+                    return $ruoliUnici;
+                }
+
+                // Inizializza la variabile $ruoliUnici con i ruoli unici presenti nei progetti
+                $ruoliUnici = getRuoliUnici($progetti);
+
+               
+                echo '<a href="?ruolo=All#Portfolio" class="' . ($_GET['ruolo'] == 'All' ? 'active' : '') . '">All</a>';  // PULSANTE PER VEDERE TUTTI I PROGETTI
+
+                // Stampa un pulsante per ogni ruolo unico
+                foreach ($ruoliUnici as $ruolo) {
+                    echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($_GET['ruolo'] == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
+                }
+
+                ?>
             </div>
 
             <div class="row-grid">
-                <div class="Riga1">
-                    <div class="Rigadiv">
-                        <div class="img">
-                            <a href="Pagina-Progetto.html"><img src="img/PortfolioPrj/pj2.jpg" alt="pj2" title="pj2" class="pjimg"></a>
-                            <div class="Titolo-pj">
-                                <h4>Progetto 1</h4>
-                                <span class="Testo-secondario">Web Design</span>
-                            </div>
-                        </div>
-                       
+                <?php
+                // Verifica se il parametro 'ruolo' è stato inviato tramite richiesta GET
+                if (isset($_GET['ruolo'])) {
+                    // Se sì, imposta $ruoloSelezionato con il valore del parametro 'ruolo'
+                    $ruoloSelezionato = $_GET['ruolo'];
 
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj3.jpg" alt="pj2" title="pj2" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Web Master</span>
-                            </div>
-                        </div>
+                    // Filtra i progetti in base al ruolo selezionato
+                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {
+                        return $progetto['ruolo'] == $ruoloSelezionato;
+                    });
 
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj4.jpg" alt="pj4" title="pj4" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Frontend Developing</span>
-                            </div>
-                        </div>
+                    // Se $ruoloSelezionato è 'All' o non corrisponde a nessun ruolo, mostra tutti i progetti
+                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) {
+                        $progettiDaMostrare = $progetti;
+                    } else {
+                        $progettiDaMostrare = $progettiFiltrati; 
+                    }
+                } else {
+                    // Se il parametro 'ruolo' non è stato fornito, mostra tutti i progetti
+                    $progettiDaMostrare = $progetti;
+                }
 
-                        
-                       
-                    </div>
+                // Ordina i progetti in base alla data di fine in ordine decrescente
+                usort($progettiDaMostrare, function ($a, $b) {
+                    return strtotime($b['data_fine']) - strtotime($a['data_fine']);
+                });
 
-                    
-                    
-                </div>
-
-                <div class="Riga2">
-                    <div class="Rigadiv">
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj2.jpg" alt="pj2" title="pj2" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Web Design</span>
-                            </div>
-                        </div>
-                       
-
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj3.jpg" alt="pj2" title="pj2" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Web Master</span>
-                            </div>
-                        </div>
-
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj4.jpg" alt="pj4" title="pj4" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Frontend Developing</span>
-                            </div>
-                        </div>
-
-                        
-                       
-                    </div>
-
-
-
-                    
-
-                    
-                    
-                </div>
-
-                <div class="Riga3">
-                    <div class="Rigadiv">
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj2.jpg" alt="pj2" title="pj2" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Web Design</span>
-                            </div>
-                        </div>
-                       
-
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj3.jpg" alt="pj2" title="pj2" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Web Master</span>
-                            </div>
-                        </div>
-
-                        <div class="img">
-                            <img src="img/PortfolioPrj/pj4.jpg" alt="pj4" title="pj4" class="pjimg">
-                            <div class="Titolo-pj">
-                                <h4>Titolo pj</h4>
-                                <span class="Testo-secondario">Frontend Developing</span>
-                            </div>
-                        </div>
-
-                        
-                       
-                    </div>
-
-
-
-                    
-
-                    
-                    
-                </div>
-
-
-               
+                // Itera attraverso i progetti e genera dinamicamente gli elementi HTML
+                foreach ($progettiDaMostrare as $progetto) {
+                    echo '<div class="img">';
+                    echo '<img src="' . $progetto['immagine'] . '" alt="' . $progetto['titolo'] . '" title="' . $progetto['titolo'] . '" class="pjimg">';
+                    echo '<div class="Titolo-pj">';
+                    echo '<h4>' . $progetto['titolo'] . '</h4>';
+                    echo '<span class="Testo-secondario">' . $progetto['ruolo'] . '</span>';
+                    echo '<p>Data di fine: ' . $progetto['data_fine'] . '</p>'; // AGGIUNTA CRONOLOGICA
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
             </div>
-
-
-            
-
-            
-
-
-
         </section>
-
 
         <!-- Sezione Compilazione form-->
         <section class="form">

@@ -1,0 +1,67 @@
+[
+    {
+        "titolo": "Progetto 1",
+        "descrizione": "Descrizione del progetto 1",
+        "immagine": "img/PortfolioPrj/pj1.jpg",
+        "ruolo": "Web Design",
+        "data_fine": "2023-05-15"
+    },
+    {
+        "titolo": "Progetto 2",
+        "descrizione": "Descrizione del progetto 2",
+        "immagine": "img/PortfolioPrj/pj2.jpg",
+        "ruolo": "Web Master",
+        "data_fine": "2023-08-20"
+    },
+    {
+        "titolo": "Progetto 3",
+        "descrizione": "Descrizione del progetto 3",
+        "immagine": "img/PortfolioPrj/pj3.jpg",
+        "ruolo": "Backend Developer",
+        "data_fine": "2023-10-10"
+    },
+
+    {
+        "titolo": "Progetto 4",
+        "descrizione": "Descrizione del progetto 1",
+        "immagine": "img/PortfolioPrj/pj1.jpg",
+        "ruolo": "Web Design",
+        "data_fine": "2023-05-15"
+    },
+    {
+        "titolo": "Progetto 5",
+        "descrizione": "Descrizione del progetto 2",
+        "immagine": "img/PortfolioPrj/pj2.jpg",
+        "ruolo": "Web Master",
+        "data_fine": "2023-08-20"
+    },
+    {
+        "titolo": "Progetto 6",
+        "descrizione": "Descrizione del progetto 3",
+        "immagine": "img/PortfolioPrj/pj3.jpg",
+        "ruolo": "Backend Developer",
+        "data_fine": "2023-10-10"
+    },
+
+    {
+        "titolo": "Progetto 7",
+        "descrizione": "Descrizione del progetto 1",
+        "immagine": "img/PortfolioPrj/pj1.jpg",
+        "ruolo": "Web Design",
+        "data_fine": "2023-05-15"
+    },
+    {
+        "titolo": "Progetto 8",
+        "descrizione": "Descrizione del progetto 2",
+        "immagine": "img/PortfolioPrj/pj2.jpg",
+        "ruolo": "Web Master",
+        "data_fine": "2023-08-20"
+    },
+    {
+        "titolo": "Progetto 9",
+        "descrizione": "Descrizione del progetto 3",
+        "immagine": "img/PortfolioPrj/pj3.jpg",
+        "ruolo": "Backend Developer",
+        "data_fine": "2023-10-10"
+    }
+]
