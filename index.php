@@ -311,7 +311,7 @@
 
             </div>
 
-            <form action="http://www.example.com/subscribe.php" method="post">
+            <form action="processa_form.php" method="post">
 
                 <div class="Nome-Cognome">
 
