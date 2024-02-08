@@ -450,129 +450,7 @@ body {
         }
     }
 
-    /* -------------------------------------------------------------------    SEZIONE LAVORI   -----------------------------------------------------------------------------------*/
-    .Lavori {
-        width: 100%;
-        padding: 100px 0px;
-    
-        .container {
-            display: flex;
-            flex-direction: column;
-    
-            .Titolo-sezione-prj {
-                text-align: center;
-                font-size: 30px;
-                margin: 20px auto;
-            }
-    
-            h6 {
-                text-align: center;
-                font-size: 22px;
-                font-weight: 100;
-                color: #c0a71b;
-            }
-    
-            
-    
-            .img {
-                margin: 40px 80px;
-    
-                &:hover {
-                    color: #c0a71b;
-                    transform: scale(110%);
-                }
-            }
-    
-            .pjimg {
-                width: 320px;
-                height: 320px;
-                border-radius: 320px;
-            }
-    
-            .row-grid {
-                display: flex;
-                flex-direction: column;
-    
-                .Rigadiv {
-                    display: flex;
-                    flex-direction: row;
-                }
-    
-                .Riga1,
-                .Riga2,
-                .Riga3 {
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-        }
-        .Bottoni-Lavori {
-            margin: 10px auto;
-            text-align: center;
-
-            a { 
-                
-                text-decoration: none;
-                color:#181818;
-                font-weight: bold;
-                background-color: #ffffff;
-                border:1px solid #c0a71b;
-                padding: 5px 20px;
-                border-radius: 30px;
-                transition: .4s;
-
-                &:hover,
-                &.active {
-                    background-color: transparent;
-                    cursor: pointer;
-                    color: #c0a71b;
-                }
-            }
-        }
-
-        .row-grid {
-    
-            display:flex;
-            flex-direction: column;
-            
-        }
-    
-        @media screen and (max-width: 1024px) {
-            .container {
-                .Rigadiv {
-                    display: flex;
-                    flex-direction: column;
-                }
-    
-                .Titolo-sezione-prj {
-                    text-align: center;
-                    font-size: 25px;
-                    margin: 15px auto;
-                }
-    
-                h6 {
-                    text-align: center;
-                    font-size: 22px;
-                    font-weight: 100;
-                    color: #c0a71b;
-                }
-    
-                .img {
-                    margin: 5px 10px;
-                }
-    
-                .Testo-secondario {
-                    font-size: 15px;
-                }
-    
-                h4 {
-                    font-size: 20px;
-                }
-            }
-        }
-    }
-
-}
+   
 
 
 
@@ -582,15 +460,6 @@ body {
 
 
 
-.Lavori {
-    width:100%;
-    padding:100px 0px;
-
-    .container {
-        display:flex;
-        flex-direction: column;
-    }
-}
 
 
 .Titolo-sezione-prj {
@@ -608,21 +477,9 @@ h6 {
 
 
 
-.img {
-    margin: 40px 80px;
-    
-}
 
 
-.img:hover {
 
-
-    
-    color:#c0a71b;
-    transform: scale(110%);
-    
-    
-}
 
 
 
@@ -631,31 +488,6 @@ h6 {
     height:320px;
     border-radius: 320px;
 
-}
-
-
-
-
-
-.Riga1 {
-    display: flex;
-    justify-content: center;
-}
-
-.Rigadiv {
-    display:flex;
-    flex-direction: row;
-    
-}
-
-.Riga2 {
-    display: flex;
-    justify-content: center;
-}
-
-.Riga3 {
-    display: flex;
-    justify-content: center;
 }
 
 

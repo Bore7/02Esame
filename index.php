@@ -7,6 +7,7 @@
         <meta name="description" content="Sito Web Personale">
         <title>Sito Web Personale</title> 
         <link href="../Progetto/css/stile.scss"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneProgetti.scss"  rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link libreria per le icone social-->
         
@@ -297,6 +298,11 @@
             </div>
         </section>
 
+
+
+
+
+
         <!-- Sezione Compilazione form-->
         <section class="form">
             <div class="Titolo-Form">
@@ -305,7 +311,7 @@
 
             </div>
 
-            <form action="http://www.example.com/subscribe.php" method="get">
+            <form action="http://www.example.com/subscribe.php" method="post">
 
                 <div class="Nome-Cognome">
 
