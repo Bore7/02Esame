@@ -232,21 +232,21 @@
             <div class="Bottoni-Lavori"> <!-- GENERO I BOTTONI DI FILTRO IN BASE ALLE CATEGORIE CHE HO SCRITTO DISPONIBILI NEL JSON--->
                 
                 <?php
-                // Funzione per ottenere un array univoco dei ruoli dei progetti
+                
                 function getRuoliUnici($progetti)
                 {
                     $ruoli = array_column($progetti, 'ruolo');
-                    $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY
+                    $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY PERCHE ALCUNI RUOLI SARANNO
                     return $ruoliUnici;
                 }
 
-                // Inizializza la variabile $ruoliUnici con i ruoli unici presenti nei progetti
+              
                 $ruoliUnici = getRuoliUnici($progetti);
 
-               
-                echo '<a href="?ruolo=All#Portfolio" class="' . ($_GET['ruolo'] == 'All' ? 'active' : '') . '">All</a>';  // PULSANTE PER VEDERE TUTTI I PROGETTI
+               // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
+                echo '<a href="?ruolo=All#Portfolio" class="' . ($_GET['ruolo'] == 'All' ? 'active' : '') . '">All</a>';  
 
-                // Stampa un pulsante per ogni ruolo unico
+                // PULSANTI PER ALTRI RUOLI
                 foreach ($ruoliUnici as $ruolo) {
                     echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($_GET['ruolo'] == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
                 }
