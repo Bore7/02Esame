@@ -304,14 +304,18 @@
 
 
         <!-- Sezione Compilazione form-->
-        <section class="form">
+        <section class="form" id="form">
             <div class="Titolo-Form">
                 <h1>Compila per richiedere informazioni </h1>
                 <p>Inserisci i tuoi contatti</p>
 
             </div>
 
-            <form action="processa_form.php" method="post">
+            <?php include 'processa_form.php'; ?> <!-- Includi il file processa_form.php -->
+
+    
+
+            <form  action= "index.php#form" method="post" >
 
                 <div class="Nome-Cognome">
 
@@ -331,7 +335,7 @@
 
                 
                
-                    <input type="tel" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  placeholder="Telefono">
+                    <input type="tel" name="telefono" placeholder="Telefono">
                     
                    
                     <input type="email" name="email"  placeholder="Indirizzo E-mail">
@@ -357,7 +361,16 @@
                 </div>
             </form>
 
-           
+
+             <!-- Visualizzazione del messaggio di successo -->
+             <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+                <?php if ($invioRiuscito): ?>
+                    <div style="color: green;">I dati sono stati inviati con successo!</div>
+                    
+                <?php endif; ?>
+            <?php endif; ?>
+
+                
     
 
         </section>
