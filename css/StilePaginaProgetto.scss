@@ -1,0 +1,181 @@
+@import "Variabili";
+
+/* ---------------------------------------------------------  SEZIONE RIGUARDO LA PAGINA DEL PROGETTO -------------------------------------------------------------------------*/
+
+
+
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Introduzione-Progetto {
+    @include center-flex;
+    width: 100%;
+    height: 110vh;
+    padding: 0% 20%;
+    
+    .Contenuto-Introduzione {
+        display: flex;
+        flex-direction: column;
+        
+        h1 {
+            font-size: 110px;
+            font-family: 'Hikaru', sans-serif;
+            font-weight: lighter;
+            text-align: center;
+            color: $ColorOro;
+            text-shadow: -1px -1px 0 #0e0d0d9c, 1px -1px 0 #0e0d0d9c, -1px 1px 0 #0e0d0d9c, 1px 1px 0 #0e0d0d9c;
+        }
+        
+        p {
+            margin: 80px 0px;
+            color: #000000;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #eeeeeea2;
+            border-radius: 30px;
+            font-family: 'Monserrat';
+            font-size: 19px;
+            font-weight: bolder;
+        }
+    }
+}
+
+.Progetto-Example {
+    display: flex;
+    margin-top: 120px;
+    
+    .Cont-PE {
+        display: flex;
+        flex-direction: row;
+        
+        img {
+            width: 700px;
+            height: auto;
+            margin: 50px 50px;
+            border-radius: 100px;
+        }
+    }
+    
+    .Descrizione-Pjc {
+        @include center-flex;
+        flex-direction: column;
+        
+        h2 {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 70px;
+        }
+        
+        p {
+            margin: 100px 50px;
+            font-family: 'Monserrat';
+            font-size: 26px;
+            font-weight: 500;
+        }
+        
+        a {
+            font-size: 20px;
+            text-align: center;
+            background-color: $ColorOro;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 15px 200px;
+            border-radius: 20px;
+            transition: .4s;
+            margin: 0px 20px;
+            
+            &:hover {
+                color: #000000;
+                transform: scale(110%);
+                background-color: transparent;
+                border: 2px solid $ColorOro;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 1280px) {
+    .Introduzione-Progetto {
+        background-image: url(../img/sfondo-tel.png);
+        max-height: 1000px;
+        
+        .Contenuto-Introduzione p {
+            margin: 30px 0px;
+            color: #000000;
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #eeeeeea2;
+            border-radius: 20px;
+            font-family: 'Monserrat';
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+        }
+        
+        .Contenuto-Introduzione h1 {
+            font-size: 70px;
+        }
+    }
+    
+    .Progetto-Example {
+        display: flex;
+        flex-direction: column;
+        
+        .Cont-PE {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                width: 380px;
+                height: 380px;
+                margin: 5px 5px;
+                border-radius: 50px;
+                text-align: center;
+            }
+        }
+        
+        .Descrizione-Pjc h2 {
+            margin-top: 5px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        .Descrizione-Pjc p {
+            margin: 5px 5px;
+            font-family: 'Monserrat';
+            font-size: 20px;
+            font-weight: 500;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        
+        .Descrizione-Pjc a {
+            font-size: 16px;
+            background-color: $ColorOro;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: .4s;
+            margin: 30px 30px;
+            
+            &:hover {
+                color: #000000;
+                background-color: transparent;
+                border: 2px solid $ColorOro;
+                cursor: pointer;
+            }
+        }
+    }
+}

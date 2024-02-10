@@ -1,67 +1,74 @@
 [
     {
+        "id": 1,
         "titolo": "Progetto 1",
         "descrizione": "Descrizione del progetto 1",
         "immagine": "img/PortfolioPrj/pj1.jpg",
-        "ruolo": "Web Design Frocio",
-        "data_fine": "2023-05-15"
+        "ruolo": "Web Design",
+        "data_fine": "2018-05-15"
     },
     {
+        "id": 2,
         "titolo": "Progetto 2",
         "descrizione": "Descrizione del progetto 2",
         "immagine": "img/PortfolioPrj/pj2.jpg",
-        "ruolo": "Web Master Ricchionazzo",
-        "data_fine": "2023-08-20"
+        "ruolo": "Web Master",
+        "data_fine": "2019-08-20"
     },
     {
+        "id": 3,
         "titolo": "Progetto 3",
         "descrizione": "Descrizione del progetto 3",
         "immagine": "img/PortfolioPrj/pj3.jpg",
         "ruolo": "Backend Developer",
-        "data_fine": "2023-10-10"
+        "data_fine": "2017-10-10"
     },
-
     {
+        "id": 4,
         "titolo": "Progetto 4",
-        "descrizione": "Descrizione del progetto 1",
+        "descrizione": "Descrizione del progetto 4",
         "immagine": "img/PortfolioPrj/pj1.jpg",
-        "ruolo": "Web Design",
-        "data_fine": "2023-05-15"
+        "ruolo": "Frontend Developer",
+        "data_fine": "2022-05-15"
     },
     {
+        "id": 5,
         "titolo": "Progetto 5",
-        "descrizione": "Descrizione del progetto 2",
+        "descrizione": "Descrizione del progetto 5",
         "immagine": "img/PortfolioPrj/pj2.jpg",
         "ruolo": "Web Master",
-        "data_fine": "2023-08-20"
+        "data_fine": "2021-08-20"
     },
     {
+        "id": 6,
         "titolo": "Progetto 6",
-        "descrizione": "Descrizione del progetto 3",
+        "descrizione": "Descrizione del progetto 6",
         "immagine": "img/PortfolioPrj/pj3.jpg",
         "ruolo": "Backend Developer",
-        "data_fine": "2023-10-10"
+        "data_fine": "2021-10-10"
     },
-
     {
+        "id": 7,
         "titolo": "Progetto 7",
-        "descrizione": "Descrizione del progetto 1",
+        "descrizione": "Descrizione del progetto 7",
         "immagine": "img/PortfolioPrj/pj1.jpg",
         "ruolo": "Web Design",
-        "data_fine": "2023-05-15"
+        "data_fine": "2021-05-15"
     },
     {
+        "id": 8,
         "titolo": "Progetto 8",
-        "descrizione": "Descrizione del progetto 2",
+        "descrizione": "Descrizione del progetto 8",
         "immagine": "img/PortfolioPrj/pj2.jpg",
-        "ruolo": "Web Master",
-        "data_fine": "2023-08-20"
+        "ruolo": "Frontend Developer",
+        "data_fine": "2022-08-20"
     },
     {
+        "id": 9,
         "titolo": "Progetto 9",
-        "descrizione": "Descrizione del progetto 3",
+        "descrizione": "Descrizione del progetto 9",
         "immagine": "img/PortfolioPrj/pj3.jpg",
-        "ruolo": "Backend Developer",
+        "ruolo": "Fullstack Developer",
         "data_fine": "2023-10-10"
     }
 ]

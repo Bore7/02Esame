@@ -12,6 +12,7 @@
         <link href="../Progetto/css/stileSezioneForm.min.css"  rel="stylesheet"> 
         <link href="../Progetto/css/stileSezioneAboutMe.min.css"  rel="stylesheet">
         <link href="../Progetto/css/stileSezioneHome.min.css"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneFooter.min.css"  rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link libreria per le icone social-->
         
@@ -74,7 +75,7 @@
 
         <section class="About-me" id="AboutMe">
 
-            <div><img src="img/Programmatore.jpg" alt="Programmatore" title="About Me" width="700" height="1050" class="Programimg"> </div>
+            <div class="DivImg"><img src="img/Programmatore.jpg" alt="Programmatore" title="About Me" width="700" height="1050" class="Programimg"> </div>
 
 
             
@@ -293,6 +294,10 @@
             </div>
         </section>
 
+
+
+        <!-- Sezione Portfolio -->
+
         <?php
         $progetti_json = file_get_contents('Lavori-progetti.json');   // PRNEDO IL CONTENUTO FILE SCRITTO NEL FILE JSON 
         $progetti = json_decode($progetti_json, true);    // DECODIFICO JSON IN PHP
@@ -319,6 +324,9 @@
 
             <div class="Bottoni-Lavori"> <!-- GENERO I BOTTONI DI FILTRO IN BASE ALLE CATEGORIE CHE HO SCRITTO DISPONIBILI NEL JSON--->
                 <?php
+
+                // INCLUDIAMO IL FILE PER LA GENERAZIONE DEI FILE DEL PROGETTO
+                include 'genera_pagine_progetto.php';
                   // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
                 echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';  
                 
@@ -353,7 +361,9 @@
 
                 foreach ($progettiDaMostrare as $progetto) {
                     echo '<div class="img">';
+                    echo '<a href="' . str_replace(' ', '_', $progetto['titolo']) . '.html">'; // APRO IL TAG A E AGGIUNGO IL LINK CREATO GRAZIE ALLA PAGINA_PROGETTO.PHP
                     echo '<img src="' . $progetto['immagine'] . '" alt="' . $progetto['titolo'] . '" title="' . $progetto['titolo'] . '" class="pjimg">';
+                    echo '</a>'; // CHIUDO IL TAG A
                     echo '<div class="Titolo-pj">';
                     echo '<h4>' . $progetto['titolo'] . '</h4>';
                     echo '<span class="Testo-secondario">' . $progetto['ruolo'] . '</span>';

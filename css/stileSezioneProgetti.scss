@@ -43,6 +43,7 @@
     .container {
         display: flex;
         flex-direction: column;
+        
 
         .Titolo-sezione-prj {
             text-align: center;
@@ -53,6 +54,7 @@
 
         h6 {
             @include common-text-properties;
+            text-align: center;
             color: $ColorOro;
             font-size: 22px;
             font-weight: 100;

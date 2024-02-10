@@ -1,0 +1,128 @@
+@import "Variabili";
+
+
+/* -------------------------------------------------------------------      SEZIONE FOOTER/PIE DI PAGINA    ---------------------------------------------------------------------------------*/
+
+/* Mixin per stile dei recapiti */
+@mixin recapiti-style {
+    color: #fff;
+    p {
+        margin: 10px;
+        text-align: center;
+        font-size: 18px;
+
+        &.small {
+            margin: 8px;
+            font-size: 16px;
+        }
+    }
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+ // STILE DELLE ICONE
+%icon-style {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    scale: 150%;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+
+footer {
+    margin-top: 25px;
+    background-color: $ColoreFooter;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: center;
+
+    &.mobile {
+        margin-top: 0px;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 30px 50px;
+    margin-right: 100px;
+    scale: 200%;
+    
+    &.mobile {
+        scale: 130%;
+        margin: 0;
+    }
+}
+
+.footer {
+    @extend .logo;
+}
+
+.Recapiti {
+    @include recapiti-style;
+}
+
+.ContattamiSu {
+    margin: 0 0 0 70px;
+
+    &.mobile {
+        margin: 0px 0 0 15px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.fa {
+    @extend %icon-style;
+}
+
+/* Media query per schermi più piccoli */
+@media screen and (max-width:  1000px) {
+    footer {
+        @extend .mobile;
+    }
+
+    footer .logo {
+        @extend .mobile;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Recapiti p {
+        @extend .small;
+    }
+
+    .Recapiti {
+        font-size: 14px;
+    }
+
+    .ContattamiSu {
+        @extend .mobile;
+    }
+}
