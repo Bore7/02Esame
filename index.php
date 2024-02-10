@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sito Web Personale">
         <title>Sito Web Personale</title> 
-        <link href="../Progetto/css/stile.scss"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneProgetti.scss"  rel="stylesheet">
+        <link href="../Progetto/css/stile.min.css"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneProgetti.min.css"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneServizi.min.css"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneForm.min.css"  rel="stylesheet"> 
+        <link href="../Progetto/css/stileSezioneAboutMe.min.css"  rel="stylesheet">
+        <link href="../Progetto/css/stileSezioneHome.min.css"  rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link libreria per le icone social-->
         
@@ -65,6 +69,9 @@
         </section>
 
 
+         <!-- Sezione About-Me -->
+
+
         <section class="About-me" id="AboutMe">
 
             <div><img src="img/Programmatore.jpg" alt="Programmatore" title="About Me" width="700" height="1050" class="Programimg"> </div>
@@ -90,11 +97,23 @@
                     laborum.
                 </p></div>
 
+                <!-- Sezione Linguaggi di Programmazione Preferiti -->
+                <div class="Preferiti">
+                    <h3>Linguaggi di Programmazione Preferiti</h3>
+                    <ul>
+                        <li><strong>HTML:</strong> HTML è il linguaggio standard per la creazione di pagine web.</li>
+                        <li><strong>CSS/SCSS:</strong> CSS (e SCSS) è utilizzato per lo stile e la formattazione delle pagine web.</li>
+                        <li><strong>PHP:</strong> PHP è un linguaggio di scripting ampiamente utilizzato per lo sviluppo web lato server.</li>
+                        <!-- Aggiungi altri linguaggi di programmazione preferiti con una breve descrizione -->
+                    </ul>
+                </div>
+
             </div>
         </section>
 
-
-        <section class="Servizi">
+        
+         <!-- Sezione Servizi -->
+        <section class="Servizi" id="Servizi">
 
 
 
@@ -105,6 +124,27 @@
                 </div>
 
                 <div class="box">
+
+                <?php
+            // Controlla se il parametro service_id è stato fornito nella richiesta
+            if (isset($_GET['service_id'])) {
+                $service_id = $_GET['service_id'];
+
+                // Utilizza $service_id per recuperare la descrizione completa del servizio dal tuo database o da un array
+                // Ad esempio, puoi avere un array associativo con le descrizioni dei servizi
+                $services = [
+                    1 => "Testo aggiuntivo per il primo servizio.",
+                    2 => "Testo aggiuntivo per il secondo servizio.",
+                    3 => "Testo aggiuntivo per il terzo servizio.",
+                    4 => "Testo aggiuntivo per il quarto servizio.",
+                    5 => "Testo aggiuntivo per il quinto servizio.",
+                ];
+
+               
+            }
+            ?>
+                    
+
                     <div class="servizio">
                         
                         <span class="material-symbols-outlined">
@@ -112,14 +152,22 @@
                         </span>
                         <h5>Web Designer</h5>
 
-                        <div class="Descrizione">
+                        <div class="Descrizione" id="D1">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                                 .</p>
+
+                                <?php
+                            if (isset($_GET['service_id']) && $_GET['service_id'] == 1) {
+                                echo '<div class="additional-text">';
+                                echo '<p>' . $services[1] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
                             
                             <p style="text-align: center;">
-                            <a class="button" href="#">Read More</a></p>
+                            <a class="button" href="?service_id=1#D1">Read More</a></p>
                         </div>
 
 
@@ -131,19 +179,27 @@
                         </span>
                         <h5>Web Master</h5>
 
-                        <div class="Descrizione">
+                        <div class="Descrizione" id="D2">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                             </p>
+
+                            <?php
+                            if (isset($_GET['service_id']) && $_GET['service_id'] == 2) {
+                                echo '<div class="additional-text">';
+                                echo '<p>' . $services[2] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
                             
                             <p style="text-align: center;">
-                            <a class="button" href="#">Read More</a></p>
+                            <a class="button" href="?service_id=2#D2">Read More</a></p>
                         </div>
 
                     </div>
 
-                    <div class="servizio">
+                    <div class="servizio" id="D3">
                         <span class="material-symbols-outlined">
                             home
                         </span>
@@ -155,8 +211,18 @@
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                                </p>
                             
+                            <?php
+                            if (isset($_GET['service_id']) && $_GET['service_id'] == 3) {
+                                echo '<div class="additional-text">';
+                                echo '<p>' . $services[3] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
+
+                            
+                            
                             <p style="text-align: center;">
-                            <a class="button" href="#">Read More</a></p>
+                            <a class="button" href="?service_id=3#D3">Read More</a></p>
                         </div>
 
 
@@ -170,14 +236,21 @@
                         <h5>Backend Developer</h5>
 
 
-                        <div class="Descrizione">
+                        <div class="Descrizione" id="D4">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                                 </p>
+                                <?php
+                            if (isset($_GET['service_id']) && $_GET['service_id'] == 4) {
+                                echo '<div class="additional-text">';
+                                echo '<p>' . $services[4] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
                             
                             <p style="text-align: center;">
-                            <a class="button" href="#">Read More</a></p>
+                            <a class="button" href="?service_id=4#D4">Read More</a></p>
                         </div>
 
 
@@ -190,14 +263,21 @@
                         </span>
                         <h5>Full-Stack Developer</h5>
 
-                        <div class="Descrizione">
+                        <div class="Descrizione" id="D5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
                                 </p>
+                                <?php
+                            if (isset($_GET['service_id']) && $_GET['service_id'] == 5) {
+                                echo '<div class="additional-text">';
+                                echo '<p>' . $services[5] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
                             
                             <p style="text-align: center;">
-                            <a class="button" href="#">Read More</a></p>
+                            <a class="button" href="?service_id=5#D5">Read More</a></p>
                         </div>
 
                         
@@ -214,14 +294,21 @@
         </section>
 
         <?php
-       
-        $progetti_json = file_get_contents('Lavori-progetti.json');  // PRNEDO IL CONTENUTO FILE SCRITTO NEL FILE JSON 
+        $progetti_json = file_get_contents('Lavori-progetti.json');   // PRNEDO IL CONTENUTO FILE SCRITTO NEL FILE JSON 
+        $progetti = json_decode($progetti_json, true);    // DECODIFICO JSON IN PHP
 
-       
-        $progetti = json_decode($progetti_json, true);  // DECODIFICO JSON IN PHP
+        $ruoloSelezionato = isset($_GET['ruolo']) ? $_GET['ruolo'] : 'All'; // Impostazione predefinita su 'All'
+
+        function getRuoliUnici($progetti)
+        {
+            $ruoli = array_column($progetti, 'ruolo');
+            $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY PERCHE ALCUNI RUOLI SARANNO
+            return $ruoliUnici;
+        }
+
+        $ruoliUnici = getRuoliUnici($progetti);
         ?>
 
-        <!-- Sezione Lavori e Progetti -->
         <section class="Lavori" id="Portfolio">
             <div class="container">
                 <div class="Titolo-sezione-prj">
@@ -231,73 +318,52 @@
             </div>
 
             <div class="Bottoni-Lavori"> <!-- GENERO I BOTTONI DI FILTRO IN BASE ALLE CATEGORIE CHE HO SCRITTO DISPONIBILI NEL JSON--->
-                
                 <?php
+                  // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
+                echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';  
                 
-                function getRuoliUnici($progetti)
-                {
-                    $ruoli = array_column($progetti, 'ruolo');
-                    $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY PERCHE ALCUNI RUOLI SARANNO
-                    return $ruoliUnici;
-                }
-
-              
-                $ruoliUnici = getRuoliUnici($progetti);
-
-               // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
-                echo '<a href="?ruolo=All#Portfolio" class="' . ($_GET['ruolo'] == 'All' ? 'active' : '') . '">All</a>';  
-
-                // PULSANTI PER ALTRI RUOLI
+                 // PULSANTI PER ALTRI RUOLI
                 foreach ($ruoliUnici as $ruolo) {
-                    echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($_GET['ruolo'] == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
+                    echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($ruoloSelezionato == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
                 }
-
                 ?>
             </div>
 
             <div class="row-grid">
                 <?php
-                // Verifica se il parametro 'ruolo' è stato inviato tramite richiesta GET
+                   // VERIFICO SE IL PARAMETRO RUOLO E STATO INVIATO 
                 if (isset($_GET['ruolo'])) {
-                    // Se sì, imposta $ruoloSelezionato con il valore del parametro 'ruolo'
                     $ruoloSelezionato = $_GET['ruolo'];
-
-                    // Filtra i progetti in base al ruolo selezionato
-                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {
+                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {     // FILTRA I PROGETTI IN BASE AL RUOLO SELEZIONATO
                         return $progetto['ruolo'] == $ruoloSelezionato;
                     });
 
-                    // Se $ruoloSelezionato è 'All' o non corrisponde a nessun ruolo, mostra tutti i progetti
-                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) {
+                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) { // Se $ruoloSelezionato è 'All' o non corrisponde a nessun ruolo, mostra tutti i progetti
                         $progettiDaMostrare = $progetti;
                     } else {
                         $progettiDaMostrare = $progettiFiltrati; 
                     }
                 } else {
-                    // Se il parametro 'ruolo' non è stato fornito, mostra tutti i progetti
                     $progettiDaMostrare = $progetti;
                 }
 
-                // Ordina i progetti in base alla data di fine in ordine decrescente
                 usort($progettiDaMostrare, function ($a, $b) {
                     return strtotime($b['data_fine']) - strtotime($a['data_fine']);
                 });
 
-                // Itera attraverso i progetti e genera dinamicamente gli elementi HTML
                 foreach ($progettiDaMostrare as $progetto) {
                     echo '<div class="img">';
                     echo '<img src="' . $progetto['immagine'] . '" alt="' . $progetto['titolo'] . '" title="' . $progetto['titolo'] . '" class="pjimg">';
                     echo '<div class="Titolo-pj">';
                     echo '<h4>' . $progetto['titolo'] . '</h4>';
                     echo '<span class="Testo-secondario">' . $progetto['ruolo'] . '</span>';
-                    echo '<p>Data di fine: ' . $progetto['data_fine'] . '</p>'; // AGGIUNTA CRONOLOGICA
+                    echo '<p>Data di fine: ' . $progetto['data_fine'] . '</p>';
                     echo '</div>';
                     echo '</div>';
                 }
                 ?>
             </div>
         </section>
-
 
 
 
@@ -365,7 +431,7 @@
              <!-- Visualizzazione del messaggio di successo -->
              <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
                 <?php if ($invioRiuscito): ?>
-                    <div style="color: green;">I dati sono stati inviati con successo!</div>
+                    <div style="color: green; text-align: center;">I dati sono stati inviati con successo!</div>   <!-- Metto lo stile del div direttamente qua dentro, l ho fatto anche in processa_form.php -->
                     
                 <?php endif; ?>
             <?php endif; ?>

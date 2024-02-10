@@ -1,0 +1,113 @@
+ /* -------------------------------------------------------------------    SEZIONE ABOUT-ME   -----------------------------------------------------------------------------------*/
+@import "Variabili";
+ 
+ .About-me {
+    display: flex;
+    align-items: center;
+    padding-top: 200px;
+    padding-right: 100px;
+    padding-bottom: 80px;
+    padding-left: 100px;
+
+    .Contenuto-Aboutme {
+        display: flex;
+        flex-direction: column;
+        height: 810px;
+        width: 1500px;
+
+        .Programimg {
+            max-width: 100%;
+            height: auto;
+
+            @media screen and (max-width: 1000px) {
+                display: flex;
+                height: 90%;
+                width: auto;
+                border-radius: 30px;
+            }
+        }
+
+        h2 {
+            font-size: 70px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 10000;
+            text-align: center;
+            text-align: top;
+            vertical-align: middle;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 60px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            font-family: 'Monserrat', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            padding-right: 50px;
+            padding-left: 50px;
+            padding-top: 50px;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 16px;
+                letter-spacing: 0.5px;
+                padding-right: 15px;
+                padding-left: 15px;
+                padding-top: 5px;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            height: 20%;
+            width: auto;
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        padding-right: 5px;
+        padding-bottom: 50px;
+        padding-left: 10px;
+    }
+
+    .Preferiti {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 50px;
+    
+        .linguaggi-preferiti {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+    
+            ul {
+                list-style-type: none;
+                padding: 0;
+    
+                li {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                    font-family: 'Monserrat', sans-serif;
+                }
+            }
+        }
+    }
+}

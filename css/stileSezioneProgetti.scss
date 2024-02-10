@@ -1,5 +1,42 @@
  /* -------------------------------------------------------------------    SEZIONE LAVORI   -----------------------------------------------------------------------------------*/
- .Lavori {
+// Importa le variabili necessarie
+@import "Variabili";
+
+// Mixin per le proprietà comuni del testo
+@mixin common-text-properties {
+    @media screen and (max-width: 1024px) {
+        text-align: center;
+        font-size: 25px;
+        margin: 15px auto;
+    }
+}
+
+// Mixin per i bottoni
+@mixin button-properties {
+    text-decoration: none;
+    color: #181818;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 1px solid $ColorOro;
+    padding: 5px 20px;
+    border-radius: 30px;
+    transition: .4s;
+
+    &:hover,
+    &.active {
+        background-color: transparent;
+        cursor: pointer;
+        color: $ColorOro;
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 2px 10px;
+        margin: 5px 5px;
+    }
+}
+
+// Stile per la sezione Lavori
+.Lavori {
     width: 100%;
     padding: 100px 0px;
 
@@ -11,36 +48,17 @@
             text-align: center;
             font-size: 30px;
             margin: 20px auto;
-
-            @media screen and (max-width: 1024px) {
-
-                text-align: center;
-                font-size: 25px;
-                margin: 15px auto;
-            }
+            @include common-text-properties;
         }
 
         h6 {
-            text-align: center;
+            @include common-text-properties;
+            color: $ColorOro;
             font-size: 22px;
             font-weight: 100;
-            color: #c0a71b;
-
-            @media screen and (max-width: 1024px) {
-                text-align: center;
-                font-size: 22px;
-                font-weight: 100;
-                color: #c0a71b;
-            }
         }
-
-        
     }
-        
 
-        
-
-   
     .Bottoni-Lavori {
         display: flex;
         justify-content: center;
@@ -48,34 +66,10 @@
         text-align: center;
         flex-wrap: wrap;
 
-        a { 
-            
-            text-decoration: none;
-            color:#181818;
-            font-weight: bold;
-            background-color: #ffffff;
-            border:1px solid #c0a71b;
-            padding: 5px 20px;
-            border-radius: 30px;
-            transition: .4s;
-
-            &:hover,
-            &.active {
-                background-color: transparent;
-                cursor: pointer;
-                color: #c0a71b;
-            }
-
-            @media screen and (max-width: 1024px) {
-
-                padding: 2px 10px;
-                
-                margin: 5px 5px;
-
-            }
+        a {
+            @include button-properties;
         }
     }
-
 
     .row-grid {
         display: flex;
@@ -84,13 +78,10 @@
         justify-content: center;
 
         .img {
-                margin: 40px 120px;
-    
+            margin: 40px 120px;
             &:hover {
-                color: #c0a71b;
+                color: $ColorOro;
                 transform: scale(110%);
-            
-
             }
 
             .pjimg {
@@ -98,23 +89,11 @@
                 height: 320px;
                 border-radius: 320px;
             }
-        
-            @media screen and (max-width: 1024px) {
 
+            @media screen and (max-width: 1024px) {
                 margin: 5px 10px;
             }
         }
-
-           
-
-        
-    
-    }   
-
-  
-
-   
-       
-   
+    }
 }
 

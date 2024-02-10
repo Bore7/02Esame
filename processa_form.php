@@ -1,4 +1,5 @@
 <?php
+        include 'Contatto-Class.php';
         $errors = array();
         $invioRiuscito = false;
         
@@ -40,34 +41,29 @@
                 $errors[] = "L'indirizzo email non è valido";
             }
         
-            if (empty($errors)) {   // SALVO IN JSON SE NON CI SONO ERRORI
-                // Crea un array con i dati del form
-                $form_data = array(
-                    "nome" => $nome,
-                    "cognome" => $cognome,
-                    "telefono" => $telefono,
-                    "email" => $email,
-                    "messaggio" => $messaggio
-                );
+            if (empty($errors)) {
+                // CREO UN NUOVO OGGETTO CONTATTO CON LA CLASSE CONTATTO CHE HO CREATO
+                $contatto = new Contatto($nome, $cognome, $telefono, $email, $messaggio);
         
-                
-                $json_data = json_encode($form_data);
-        
-               
+                // Salva i dati del contatto in formato JSON
+                $json_data = json_encode($contatto);
                 file_put_contents("Dati-Form.json", $json_data);
-                $invioRiuscito = true;
         
-               
+                // Salva i dati del contatto in un file di testo
+                $text_data = $contatto->toText();
+                file_put_contents("Dati-Form.txt", $text_data, FILE_APPEND);
+        
+                $invioRiuscito = true;
             }
         }
         
-        // Se non ci sono errori e l'invio è riuscito, reindirizza la pagina all'ancora del form
+        
    
         
         // Se ci sono errori, visualizzali all'utente
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo '<div style="color: red;">' . $error . '</div>';
+                echo '<div style="color: red; text-align: center;">' . $error . '</div>';
             }
         }
 

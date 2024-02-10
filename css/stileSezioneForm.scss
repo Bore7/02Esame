@@ -1,0 +1,115 @@
+/* -------------------------------------------------------------------      SEZIONE FORM    ---------------------------------------------------------------------------------*/
+@import "Variabili";
+$common-width: 600px;  // VARIABILE PER LA LARGHEZZA COMUNE DEGLI INPUT
+
+
+@mixin input-style($fontSize: 18px) {  // USO MIXIN PER GLI STILI DI INPUT
+  width: $common-width;
+  margin: 20px auto;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  transition: 0.3s ease-in-out;
+  font-size: $fontSize;
+
+  @media screen and (max-width: 1000px) {
+    width: $common-width / 2;
+    font-size: $fontSize - 3px;
+  }
+
+  &:focus {
+    border: 3px solid #000000;
+    border-radius: 5px;
+  }
+}
+
+
+@mixin submit-button-style($width: 400px, $fontSize: 15px) {  // MIXIN PER LO STILE DEL PULSANTE
+  @include input-style($fontSize);
+
+  width: $width;
+  background-color: $ColorOro;
+  color: #ffffff;
+  font-weight: bold;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+    border: 2px solid $ColorOro;
+    cursor: pointer;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(14, 19, 36, 0.952);
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .Titolo-Form {
+    text-align: center;
+    margin: 20px;
+    color: #f0f0f0;
+
+    h1 {
+      font-size: 38px;
+      margin: 20px;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 25px;
+        margin: 15px;
+      }
+    }
+
+    p {
+      margin: 35px;
+      font-size: 18px;
+      font-weight: lighter;
+
+      @media screen and (max-width: 1000px) {
+        margin: 25px;
+        font-size: 15px;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  .Nome-Cognome,
+  .Tel-Email,
+  .Textarea,
+  .Submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    input[type='text'],
+    input[type='tel'],
+    input[type='email'],
+    textarea {
+      @include input-style();
+    }
+
+    input[type='submit'] {
+      @include submit-button-style();
+    }
+
+    textarea {
+      width: 800px;
+
+      @media screen and (max-width: 1000px) {
+        width: 200px;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
