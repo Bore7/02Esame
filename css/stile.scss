@@ -3,6 +3,7 @@
 @import "Variabili";
 
 
+// STILE DEFAULT
 * {
     margin: 0;
     padding: 0;
@@ -10,38 +11,52 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+// 
 body {
-    color: rgb(0, 0, 0);
+    color: $coloreNero;
 }
 
+// STILE DELL HEADER
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: rgba(14, 19, 36, 0.952);
+    background: $coloreDarkBlu;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-}
 
-.BarNav a {
-    font-size: 20px;
-    margin-left: 80px;
-    color: #ededed;
-    text-decoration: none;
-    font-weight: 550;
-    transition: .4s;
+   
+    .logo {
+        img {
+            height: 80px;
+            width: 80px;
+        }
+    }
 
-    &:hover,
-    &.active {
-        color: #c0a71b;
+    // STILE BARNAV
+    .BarNav {
+        a {
+            font-size: 20px;
+            margin-left: 80px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 550;
+            transition: .4s;
+
+            &:hover,
+            &.active {
+                color: $ColorOro;
+            }
+        }
     }
 }
 
+// STILE DEL VIDEO DI BACKGROUND
 .Background-video {
     position: absolute;
     right: 0;
@@ -66,9 +81,6 @@ body {
         display: none;
     }
 }
-
-
-    
    
    
    

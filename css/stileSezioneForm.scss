@@ -9,7 +9,7 @@ $common-width: 600px;  // VARIABILE PER LA LARGHEZZA COMUNE DEGLI INPUT
   padding: 12px 20px;
   border-radius: 5px;
   box-sizing: border-box;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid $coloreNero;
   transition: 0.3s ease-in-out;
   font-size: $fontSize;
 
@@ -19,7 +19,7 @@ $common-width: 600px;  // VARIABILE PER LA LARGHEZZA COMUNE DEGLI INPUT
   }
 
   &:focus {
-    border: 3px solid #000000;
+    border: 3px solid $coloreNero;
     border-radius: 5px;
   }
 }
@@ -45,7 +45,7 @@ $common-width: 600px;  // VARIABILE PER LA LARGHEZZA COMUNE DEGLI INPUT
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: rgba(14, 19, 36, 0.952);
+  background-color: $coloreDarkBlu;
   padding-top: 70px;
   padding-bottom: 70px;
 

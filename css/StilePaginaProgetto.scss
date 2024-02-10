@@ -31,7 +31,7 @@
         
         p {
             margin: 80px 0px;
-            color: #000000;
+            color: $coloreNero;
             text-align: center;
             padding: 30px 20px;
             background-color: #eeeeeea2;
@@ -90,7 +90,7 @@
             margin: 0px 20px;
             
             &:hover {
-                color: #000000;
+                color: $coloreNero;
                 transform: scale(110%);
                 background-color: transparent;
                 border: 2px solid $ColorOro;
@@ -108,7 +108,7 @@
         
         .Contenuto-Introduzione p {
             margin: 30px 0px;
-            color: #000000;
+            color: $coloreNero;
             text-align: center;
             padding: 20px 10px;
             background-color: #eeeeeea2;
@@ -171,7 +171,7 @@
             margin: 30px 30px;
             
             &:hover {
-                color: #000000;
+                color: $coloreNero;
                 background-color: transparent;
                 border: 2px solid $ColorOro;
                 cursor: pointer;

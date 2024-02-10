@@ -24,7 +24,7 @@
 //MIXIN PER LO STILE DI H3
 @mixin subtitle-style {
     font-size: 30px;
-    color: #eecf1d;
+    color: $ColorOro;
 
     &::first-letter {
         font-size: 40px;

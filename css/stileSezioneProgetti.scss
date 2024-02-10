@@ -14,7 +14,7 @@
 // Mixin per i bottoni
 @mixin button-properties {
     text-decoration: none;
-    color: #181818;
+    color: $ColoreFooter;
     font-weight: bold;
     background-color: #ffffff;
     border: 1px solid $ColorOro;
