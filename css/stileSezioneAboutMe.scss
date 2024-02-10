@@ -2,7 +2,7 @@
 @import "Variabili";
 
 
-// Mixin per gestire i padding
+// PADDING CON MIXIN
 @mixin padding($top, $right, $bottom, $left) {
     padding-top: $top;
     padding-right: $right;
@@ -10,7 +10,7 @@
     padding-left: $left;
 }
 
-// Mixin per gestire i margin
+// MMARGIN CON MIXIN
 @mixin margin($top, $right, $bottom, $left) {
     margin-top: $top;
     margin-right: $right;
@@ -18,12 +18,12 @@
     margin-left: $left;
 }
 
-// Mixin per gestire i font-size e la dimensione del testo
+// 
 @mixin font-size($size) {
     font-size: $size;
 }
 
-// Estendiamo gli stili comuni per i titoli h2 e h3
+// ESTENDO GLI STILI COMUNI PER GLI H
 %common-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 10000;
@@ -33,7 +33,7 @@
     padding: 20px;
 }
 
-// Estendiamo gli stili comuni per i paragrafi
+// ESTENDO ANCHE GLI STILI COMUNI PER I PARAGRAI
 %common-paragraph {
     font-family: 'Monserrat', sans-serif;
     font-weight: bold;
@@ -41,7 +41,7 @@
     letter-spacing: 1px;
 }
 
-// Estendiamo gli stili comuni per le liste
+// ESTENDO GLI STILI COMUNI PER LE LISTE
 %common-list {
     font-size: 18px;
     font-weight: bold;
@@ -60,7 +60,6 @@
     }
 }
 
-// Estendiamo gli stili comuni per i preferiti
 %common-favorites {
     display: flex;
     justify-content: space-around;
