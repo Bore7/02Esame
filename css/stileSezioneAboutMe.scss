@@ -1,38 +1,120 @@
  /* -------------------------------------------------------------------    SEZIONE ABOUT-ME   -----------------------------------------------------------------------------------*/
 @import "Variabili";
- 
- .About-me {
+
+
+// Mixin per gestire i padding
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+// Mixin per gestire i margin
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+// Mixin per gestire i font-size e la dimensione del testo
+@mixin font-size($size) {
+    font-size: $size;
+}
+
+// Estendiamo gli stili comuni per i titoli h2 e h3
+%common-title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 10000;
+    text-align: center;
+    text-align: top;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+// Estendiamo gli stili comuni per i paragrafi
+%common-paragraph {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+// Estendiamo gli stili comuni per le liste
+%common-list {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 25px;
+
+    @include media(max-width, 1280px) {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+}
+
+// Estendiamo gli stili comuni per i preferiti
+%common-favorites {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+
+    .linguaggi-preferiti {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                font-size: 20px;
+                margin-bottom: 5px;
+                font-family: 'Monserrat', sans-serif;
+            }
+        }
+    }
+}
+
+// Applichiamo gli stili
+.About-me {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 200px;
-    padding-right: 100px;
-    padding-bottom: 80px;
-    padding-left: 100px;
-    
+    @include padding(200px, 100px, 80px, 100px);
 
-        .DivImg {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            .Programimg {
-                max-width: 100%;
-                height: auto;
+    .DivImg {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        .Programimg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px;
+
+            @include media(max-width, 1000px) {
+                display: flex;
+                height: 80%;
+                width: 80%;
                 border-radius: 30px;
-                
-                
-    
-                @media screen and (max-width: 1000px) {
-                    display: flex;
-                    
-                    height: 80%;
-                    width: 80%;
-                    border-radius: 30px;
-                }
             }
-
         }
-        
+    }
 
     .Contenuto-Aboutme {
         display: flex;
@@ -40,143 +122,52 @@
         height: 810px;
         width: 1500px;
 
-
         h2 {
-            font-size: 70px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 10000;
-            text-align: center;
-            text-align: top;
-            vertical-align: middle;
-            padding-right: 30px;
-            padding-left: 30px;
-            padding-bottom: 20px;
-            padding-top: 20px;
+            @extend %common-title;
+            @include font-size(70px);
 
-            @media screen and (max-width: 1280px) {
-                font-size: 60px;
+            @include media(max-width, 1280px) {
+                @include font-size(60px);
             }
         }
 
         p {
-            font-size: 20px;
-            font-family: 'Monserrat', sans-serif;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 1px;
-            padding-right: 50px;
-            padding-left: 50px;
-            padding-top: 50px;
+            @extend %common-paragraph;
+            @include font-size(20px);
+            @include padding(50px, 50px, 50px, 50px);
 
-            @media screen and (max-width: 1280px) {
-                font-size: 16px;
-                letter-spacing: 0.5px;
-                padding-right: 15px;
-                padding-left: 15px;
-                padding-top: 5px;
+            @include media(max-width, 1280px) {
+                @include font-size(16px);
+                @include padding(5px, 15px, 5px, 15px);
             }
         }
 
         .Preferiti {
-            display: flex;
-            flex-direction: column;
-        
+            @extend %common-list;
 
-            h3 { 
-                font-size: 30px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-weight: 10000;
-                text-align: center;
-                text-align: top;
-                vertical-align: middle;
-                padding-right: 30px;
-                padding-left: 30px;
-                padding-bottom: 20px;
-                padding-top: 20px;
-    
+            h3 {
+                @extend %common-title;
+                @include font-size(30px);
             }
-
-            ul {
-                li {
-                    strong {
-                        color: $ColorOro
-                    }
-                    text-decoration: none;
-                    font-size: 18px;
-                    font-family: 'Monserrat', sans-serif;
-                    font-weight: bold;
-                    text-align: center;
-                    letter-spacing: 1px;
-                    padding-right: 25px;
-                    padding-left: 25px;
-                    padding-top: 25px;
-
-                    @media screen and (max-width: 1280px) {
-                        font-size: 16px;
-                        letter-spacing: 0.5px;
-                        padding-right: 15px;
-                        padding-left: 15px;
-                        padding-top: 5px;
-                    }
-
-                }
-               
-    
-               
-            }
-
         }
 
-       
-
-        @media screen and (max-width: 1280px) {
+        @include media(max-width, 1280px) {
             height: 20%;
             width: auto;
-            font-size: 30px;
+            @include font-size(30px);
             display: flex;
             flex-direction: column;
         }
     }
 
-    @media screen and (max-width: 1280px) {
+    @include media(max-width, 1280px) {
         margin:0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        padding-top: 50px;
-        padding-right: 0px;
-        padding-bottom: 50px;
-        padding-left: 5px;
+        @include padding(50px, 0px, 50px, 5px);
     }
 
-    .Preferiti {
-        display: flex;
-        justify-content: space-around;
-        padding-top: 50px;
-    
-        .linguaggi-preferiti {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-    
-            h3 {
-                font-size: 24px;
-                margin-bottom: 10px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            }
-    
-            ul {
-                list-style-type: none;
-                padding: 0;
-    
-                li {
-                    font-size: 20px;
-                    margin-bottom: 5px;
-                    font-family: 'Monserrat', sans-serif;
-                }
-            }
-        }
-    }
+    @extend %common-favorites;
 }
