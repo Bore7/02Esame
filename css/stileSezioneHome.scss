@@ -1,225 +1,154 @@
 @import "Variabili";
 
 /* -------------------------------------------------------------------    SEZIONE HOME   -----------------------------------------------------------------------------------*/
-.Home {
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    height: 100vh;   
-    padding: 0 10%;
-    
-    
-
+// MIXIN PER IL PADDING
+@mixin padding($top, $right, $bottom, $left) {
+    padding: $top $right $bottom $left;
 }
 
-
-.Contenuto-home {
-    
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff8e;
-    max-width: 800px;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-    border-radius: 50px;
-    
+// MIXIN PER IL FONT SIZE
+@mixin font-size($size) {
+    font-size: $size;
 }
 
-.TitoloNome {
-    display: flex;
-    flex-direction: row;
-    
-}
-
-.Contenuto-home h1{
-    font-size: 100px;
+// MIXING PER LO STILE DI h1
+@mixin title-style {
     font-family: 'Hikaru', sans-serif;
     font-weight: lighter;
-    margin: 10px;
-}
-.Contenuto-home h1::first-letter{
-    font-size: 130px;
-    font-family: 'Hikaru', sans-serif;
-    font-weight: lighter;
-    
-   
-}
 
-
-
-
-.Contenuto-home h3{
-    font-size: 30px;
-    color:#eecf1d;
-    
-}
-
-.Contenuto-home h3::first-letter{
-    font-size: 40px;
-    color:#eecf1d;
-    
-}
-
-.Contenuto-home p{
-    font-size: 20px;
-    
-    
-}
-
-.Logo-Home {
-
-    margin:10px;
-    padding:0;
-   
-    
-}
-
-.sfondologo .rombo{
-    
-    scale: 100%;
-    margin:0;
-    padding:0;
-    z-index: -1;
-    position: absolute;
-    
-
-}
-
-
-
-.sfondologo {
-    width:600px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:0;
-    transition: 0.3s;
-}
-
-.sfondologo:hover {
-    transform: translateY(-10px);
-    scale:105%;
-
-}
-
-.sfondologo .logoVV{
-    scale:30%;
-    margin:0;
-    padding:0;
-    text-align: center;
-}
-
-
-
-
-
-
-/* Ora penso al logo con il rombo in sottofondo */
-
-
-
-
-@media (max-width: 1280px) {
-
-    .Home {
-
-        background-image: url(../img/sfondo-tel.png);
-        height: 900px;
-        
-        
-        
-    
+    &::first-letter {
+        font-size: 130px;
     }
+}
 
-    .Home {
+//MIXIN PER LO STILE DI H3
+@mixin subtitle-style {
+    font-size: 30px;
+    color: #eecf1d;
+
+    &::first-letter {
+        font-size: 40px;
+    }
+}
+
+
+@mixin paragraph-style {
+    font-size: 20px;
+}
+
+
+@mixin logo-style {
+    margin: 10px;
+    padding: 0;
+
+    .sfondologo {
+        width: 600px;
+        height: 600px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 0;
+        transition: 0.3s;
+
+        &:hover {
+            transform: translateY(-10px) scale(105%);
+        }
+
+        .rombo {
+            scale: 100%;
+            margin: 0;
+            padding: 0;
+            z-index: -1;
+            position: absolute;
+        }
+
+        .logoVV {
+            scale: 30%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
-    
-    
+}
+
+
+.Home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+
     .Contenuto-home {
-    
         display: flex;
         flex-direction: column;
         background-color: #ffffff8e;
-        margin:100px 0 0 0 ;
-        align-items: center;
-        
-        max-width: 300px;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        border-radius: 10px;
-    }
-    .Contenuto-home h1{
-        font-size: 40px;
-        font-family: 'Hikaru', sans-serif;
-        font-weight: lighter;
-        margin: 4px;
+        border-radius: 50px;
+        max-width: 800px;
+        padding: 50px 80px;
+
+        .TitoloNome {
+            display: flex;
+            flex-direction: row;
+
+            h1 {
+                @include title-style;
+                @include font-size(100px);
+            }
+        }
+
+        h3 {
+            @include subtitle-style;
+        }
+
+        p {
+            @include paragraph-style;
+        }
     }
 
-    .Contenuto-home h1::first-letter{
-        font-size: 47px;
-        font-family: 'Hikaru', sans-serif;
-        font-weight: lighter;
-        
-       
+    .Logo-Home {
+        @include logo-style;
     }
-    .Contenuto-home h3{
-        font-size: 20px;
-        color:#eecf1d;
-        
-    }
-    .Contenuto-home h3::first-letter{
-        font-size: 25px;
-        color:#eecf1d;
-        
-    }
-    
-    .Contenuto-home p{
-        font-size: 19px;
-        text-align: center;
-        margin-top: 10px;
+}
 
-        
-        
+// Media query per dimensioni dello schermo <= 1280px
+@media (max-width: 1280px) {
+    .Home {
+        background-image: url(../img/sfondo-tel.png);
+        height: 900px;
     }
 
-    .sfondologo .rombo{
-    
-        scale: 38%;
-        margin:0;
-        padding:0;
-        z-index: 1;
-        position: absolute;
-    
-    }
-    
-    .sfondologo {
-        width:300px;
-        height: 200px;
+    .Home {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding:0;
-    }
-    
-    .sfondologo .logoVV{
-        scale:10%;
-        margin:0;
-        padding:0;
-        text-align: center;
-        z-index: 2;
     }
 
+    .Contenuto-home {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff8e;
+        margin: 100px 0 0 0;
+        align-items: center;
+        max-width: 300px;
+        padding: 10px 20px;
+        border-radius: 10px;
 
+        h1 {
+            @include font-size(40px);
+        }
 
+        h3 {
+            @include font-size(20px);
+        }
+
+        p {
+            @include font-size(19px);
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    @include logo-style;
 }
