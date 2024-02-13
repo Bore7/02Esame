@@ -2,7 +2,14 @@
         include 'Contatto-Class.php';
         $errors = array();
         $invioRiuscito = false;
-        
+
+        // INIZIALIZZO LE VARIABILI E MANTENGO I VALORI DEL FORM PER FARE IN MODO CHE SI MANTENGANO ANCHE QUANDO CI STA UN ERRORE
+        $nome = isset($_POST["nome"]) ? $_POST["nome"] : "";
+        $cognome = isset($_POST["cognome"]) ? $_POST["cognome"] : "";
+        $telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : "";
+        $email = isset($_POST["email"]) ? $_POST["email"] : "";
+        $messaggio = isset($_POST["Messaggio"]) ? $_POST["Messaggio"] : "";
+                
         // VERIFICA INVIO DEL FORM
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
@@ -15,11 +22,13 @@
                 return $data;
             }
         
-            $nome = clean_input($_POST["nome"]);     // RIPETO PER OGNI CAMPO
-            $cognome = clean_input($_POST["cognome"]);
-            $telefono = clean_input($_POST["telefono"]);
-            $email = clean_input($_POST["email"]);
-            $messaggio = clean_input($_POST["Messaggio"]);
+            
+            // RIPULISCO E VALIDO I DATI DEL FORM
+            $nome = clean_input($nome);
+            $cognome = clean_input($cognome);
+            $telefono = clean_input($telefono);
+            $email = clean_input($email);
+            $messaggio = clean_input($messaggio);
         
            
             if (empty($nome)) {   // FUNZIONE EMPTY PER FARE IN MODO CHE IL CAMPO NON VENGA LASCIATO VUOTO

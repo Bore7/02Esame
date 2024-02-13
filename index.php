@@ -391,49 +391,23 @@
 
     
 
-            <form  action= "index.php#form" method="post" >
-
+            <form action="index.php#form" method="post">
                 <div class="Nome-Cognome">
-
-                
-               
-                    <input type="text" name="nome" size="15"  placeholder="Nome" required>
-                    
-                   
-                    <input type="text" name="cognome" size="15"  placeholder="Cognome">
-                    
-                
-
-
+                    <input type="text" name="nome" size="15" placeholder="Nome" value="<?php echo isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : ''; ?>" required>
+                    <input type="text" name="cognome" size="15" placeholder="Cognome" value="<?php echo isset($_POST['cognome']) ? htmlspecialchars($_POST['cognome']) : ''; ?>">
                 </div>
 
                 <div class="Tel-Email">
-
-                
-               
-                    <input type="tel" name="telefono" placeholder="Telefono">
-                    
-                   
-                    <input type="email" name="email"  placeholder="Indirizzo E-mail">
-                    
-                
-
-
+                    <input type="tel" name="telefono" placeholder="Telefono" value="<?php echo isset($_POST['telefono']) ? htmlspecialchars($_POST['telefono']) : ''; ?>">
+                    <input type="email" name="email" placeholder="Indirizzo E-mail" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                 </div>
 
                 <div class="Textarea">
-
-                
-                    <textarea name="Messaggio" cols="20" rows="4" placeholder="Scrivi il tuo messaggio"></textarea>
-                
-                    
-                    
+                    <textarea name="Messaggio" cols="20" rows="4" placeholder="Scrivi il tuo messaggio"><?php echo isset($_POST['Messaggio']) ? htmlspecialchars($_POST['Messaggio']) : ''; ?></textarea>
                 </div>
 
                 <div class="Submit-button">
-                    
                     <input type="submit" value="Invia">
-                
                 </div>
             </form>
 
