@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sito Web Personale">
         <title>Sito Web Personale</title> 
-        <link href="../Progetto/css/stile.min.css"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneProgetti.min.css"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneServizi.min.css"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneForm.min.css"  rel="stylesheet"> 
-        <link href="../Progetto/css/stileSezioneAboutMe.min.css"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneHome.min.css"  rel="stylesheet">
-        <link href="../Progetto/css/stileSezioneFooter.min.css"  rel="stylesheet">
+        <link href="css/stile.min.css"  rel="stylesheet">
+        <link href="css/stileSezioneProgetti.min.css"  rel="stylesheet">
+        <link href="css/stileSezioneServizi.min.css"  rel="stylesheet">
+        <link href="css/stileSezioneForm.min.css"  rel="stylesheet"> 
+        <link href="css/stileSezioneAboutMe.min.css"  rel="stylesheet">
+        <link href="css/stileSezioneHome.min.css"  rel="stylesheet">
+        <link href="css/stileSezioneFooter.min.css"  rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link libreria per le icone social-->
         
@@ -322,15 +322,12 @@
                 <h6><i>Ruolo nel progetto:</i></h6>
             </div>
 
-            <div class="Bottoni-Lavori"> <!-- GENERO I BOTTONI DI FILTRO IN BASE ALLE CATEGORIE CHE HO SCRITTO DISPONIBILI NEL JSON--->
+            <div class="Bottoni-Lavori">
                 <?php
-
-                // INCLUDIAMO IL FILE PER LA GENERAZIONE DEI FILE DEL PROGETTO
-                include 'genera_pagine_progetto.php';
-                  // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
+                // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
                 echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';  
-                
-                 // PULSANTI PER ALTRI RUOLI
+
+                // PULSANTI PER ALTRI RUOLI
                 foreach ($ruoliUnici as $ruolo) {
                     echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($ruoloSelezionato == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
                 }
@@ -339,29 +336,9 @@
 
             <div class="row-grid">
                 <?php
-                   // VERIFICO SE IL PARAMETRO RUOLO E STATO INVIATO 
-                if (isset($_GET['ruolo'])) {
-                    $ruoloSelezionato = $_GET['ruolo'];
-                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {     // FILTRA I PROGETTI IN BASE AL RUOLO SELEZIONATO
-                        return $progetto['ruolo'] == $ruoloSelezionato;
-                    });
-
-                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) { // Se $ruoloSelezionato è 'All' o non corrisponde a nessun ruolo, mostra tutti i progetti
-                        $progettiDaMostrare = $progetti;
-                    } else {
-                        $progettiDaMostrare = $progettiFiltrati; 
-                    }
-                } else {
-                    $progettiDaMostrare = $progetti;
-                }
-
-                usort($progettiDaMostrare, function ($a, $b) {
-                    return strtotime($b['data_fine']) - strtotime($a['data_fine']);
-                });
-
-                foreach ($progettiDaMostrare as $progetto) {
+                foreach ($progetti as $progetto) {
                     echo '<div class="img">';
-                    echo '<a href="' . str_replace(' ', '_', $progetto['titolo']) . '.html">'; // APRO IL TAG A E AGGIUNGO IL LINK CREATO GRAZIE ALLA PAGINA_PROGETTO.PHP
+                    echo '<a href="progetto.php?progetto=' . urlencode(str_replace(' ', '_', $progetto['titolo'])) . '">';  // MODIFICO IL LINK PER PASSARE A PROGETTO.PHP
                     echo '<img src="' . $progetto['immagine'] . '" alt="' . $progetto['titolo'] . '" title="' . $progetto['titolo'] . '" class="pjimg">';
                     echo '</a>'; // CHIUDO IL TAG A
                     echo '<div class="Titolo-pj">';

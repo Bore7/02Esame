@@ -1,15 +1,40 @@
+<?php
+// CARICA IL FILE JSON DEI PROGETTI
+$progetti_json = file_get_contents('Lavori-progetti.json');
+$progetti = json_decode($progetti_json, true);
 
+// VERIFICA SE PARAMETRO PROGETTO E STATO PASSATO
+if (isset($_GET['progetto'])) {
+    $progetto_selezionato = str_replace('_', ' ', $_GET['progetto']);
 
+    $progetto_trovato = null;
+    foreach ($progetti as $progetto) {
+        if ($progetto['titolo'] === $progetto_selezionato) {
+            $progetto_trovato = $progetto;
+            break;
+        }
+    }
+
+    // SE IL PROGETTO E STATO TROVATO VISUALIZZA:
+    if ($progetto_trovato) {
+        $titolo = $progetto_trovato['titolo'];
+        $ruolo = $progetto_trovato['ruolo'];
+        $data_fine = $progetto_trovato['data_fine'];
+        $descrizione = $progetto_trovato['descrizione'];
+        $immagine = $progetto_trovato['immagine'];
+
+        
+        echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sito Web Personale">
-    <title>Progetto 1</title>
-    <link href="../Progetto/css/stile.min.css"  rel="stylesheet">
-    <link href="../Progetto/css/stileSezioneFooter.min.css"  rel="stylesheet">
-    <link href="../Progetto/css/StilePaginaProgetto.min.css"  rel="stylesheet">
+    <title>$titolo</title>
+    <link href="css/stile.min.css"  rel="stylesheet">
+    <link href="css/stileSezioneFooter.min.css"  rel="stylesheet">
+    <link href="css/StilePaginaProgetto.min.css"  rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -17,10 +42,10 @@
     <header class="header">
         <a href="#" class="logo"><img src="img/Logo-V.png" alt="Logo V.V" title="V.V" height="80" width="80"></a>
         <nav class="BarNav">
-            <a href="../Progetto/index.php#Home">Home</a>
-            <a href="../Progetto/index.php#AboutMe">About me</a>
-            <a href="../Progetto/index.php#Portfolio" class="active">Portfolio</a>
-            <a href="../Progetto/index.php#Contatti">Contatti</a>
+            <a href="index.php#Home">Home</a>
+            <a href="index.php#AboutMe">About me</a>
+            <a href="index.php#Portfolio" class="active">Portfolio</a>
+            <a href="index.php#Contatti">Contatti</a>
         </nav>
     </header>
 
@@ -33,19 +58,19 @@
     <section class="Introduzione-Progetto">
         <div class="Contenuto-Introduzione">
             <h1>Portfolio</h1>
-            <p><i>Nome Progetto: Progetto 1 <br>
-                    Ruolo nel Progetto: Web Design <br>
-                    Quando si è concluso il progetto: 2018-05-15 <br>
+            <p><i>Nome Progetto: $titolo <br>
+                    Ruolo nel Progetto: $ruolo <br>
+                    Quando si è concluso il progetto: $data <br>
                 </i></p>
         </div>
     </section>
     <section class="Progetto-Example">
         <div class="Cont-PE">
-            <img src="img/PortfolioPrj/pj1.jpg" alt="Progetto 1" title="Progetto 1">
+            <img src="{$progetto['immagine']}" alt="$titolo" title="$titolo">
             <div class="Descrizione-Pjc">
-                <h2>Progetto 1</h2>
-                <p>Descrizione del progetto 1</p>
-                <a href="../Progetto/index.php#Contatti">Contatta per ricevere maggiori informazioni</a>
+                <h2>$titolo</h2>
+                <p>{$progetto['descrizione']}</p>
+                <a href="index.php#Contatti">Contatta per ricevere maggiori informazioni</a>
             </div>
         </div>
     </section>
@@ -70,3 +95,13 @@
     </footer>
 </body>
 </html>
+HTML;
+
+    } else {
+        // Se il progetto non è stato trovato, visualizza un messaggio di errore
+        echo "Progetto non trovato.";
+    }
+} else {
+// Se il parametro "progetto" non è stato passato, visualizza un messaggio di errore
+echo "Nessun progetto selezionato.";
+}
