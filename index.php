@@ -296,18 +296,18 @@
 
 
 
-        <!-- Sezione Portfolio -->
+       <!-- Sezione Portfolio -->
 
         <?php
-        $progetti_json = file_get_contents('Lavori-progetti.json');   // PRNEDO IL CONTENUTO FILE SCRITTO NEL FILE JSON 
-        $progetti = json_decode($progetti_json, true);    // DECODIFICO JSON IN PHP
+        $progetti_json = file_get_contents('Lavori-progetti.json');
+        $progetti = json_decode($progetti_json, true);
 
-        $ruoloSelezionato = isset($_GET['ruolo']) ? $_GET['ruolo'] : 'All'; // Impostazione predefinita su 'All'
+        $ruoloSelezionato = isset($_GET['ruolo']) ? $_GET['ruolo'] : 'All';
 
         function getRuoliUnici($progetti)
         {
             $ruoli = array_column($progetti, 'ruolo');
-            $ruoliUnici = array_unique($ruoli); // RESTITUISCE SOLO I VALORE UNICI PRESENTI NELL ARRAY DI INPUT $ARRAY PERCHE ALCUNI RUOLI SARANNO
+            $ruoliUnici = array_unique($ruoli);
             return $ruoliUnici;
         }
 
@@ -324,10 +324,8 @@
 
             <div class="Bottoni-Lavori">
                 <?php
-                // PULSANTE ALL  PER VEDERE TUTTI I PROGETTI
-                echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';  
+                echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';
 
-                // PULSANTI PER ALTRI RUOLI
                 foreach ($ruoliUnici as $ruolo) {
                     echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($ruoloSelezionato == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
                 }
@@ -336,11 +334,30 @@
 
             <div class="row-grid">
                 <?php
-                foreach ($progetti as $progetto) {
+                if (isset($_GET['ruolo'])) {
+                    $ruoloSelezionato = $_GET['ruolo'];
+                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {
+                        return $progetto['ruolo'] == $ruoloSelezionato;
+                    });
+
+                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) {
+                        $progettiDaMostrare = $progetti;
+                    } else {
+                        $progettiDaMostrare = $progettiFiltrati;
+                    }
+                } else {
+                    $progettiDaMostrare = $progetti;
+                }
+
+                usort($progettiDaMostrare, function ($a, $b) {
+                    return strtotime($b['data_fine']) - strtotime($a['data_fine']);
+                });
+
+                foreach ($progettiDaMostrare as $progetto) {
                     echo '<div class="img">';
-                    echo '<a href="progetto.php?progetto=' . urlencode(str_replace(' ', '_', $progetto['titolo'])) . '">';  // MODIFICO IL LINK PER PASSARE A PROGETTO.PHP
+                    echo '<a href="progetto.php?progetto=' . urlencode($progetto['titolo']) . '">';
                     echo '<img src="' . $progetto['immagine'] . '" alt="' . $progetto['titolo'] . '" title="' . $progetto['titolo'] . '" class="pjimg">';
-                    echo '</a>'; // CHIUDO IL TAG A
+                    echo '</a>';
                     echo '<div class="Titolo-pj">';
                     echo '<h4>' . $progetto['titolo'] . '</h4>';
                     echo '<span class="Testo-secondario">' . $progetto['ruolo'] . '</span>';
@@ -351,6 +368,8 @@
                 ?>
             </div>
         </section>
+
+
 
 
 
