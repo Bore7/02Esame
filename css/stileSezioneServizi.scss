@@ -27,12 +27,12 @@
     .servizio {
         height: 370px;
         width: 335px;
-        padding: 25px 35px;
+        padding: 15px 30px;
         border-radius: 20px;
         background: $coloreNero;
         margin: 15px;
         position: relative;
-        overflow-y: scroll;
+        overflow-y: auto;
         text-align: center;
         transition: height 0.3s ease;
         
@@ -48,14 +48,14 @@
         h5 {
             color: rgb(255, 255, 255);
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .Descrizione {
             color: #f0f0f0;
             font-size: 15px;
             line-height: 24px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
 
             p {
                 margin-bottom: 20px;
