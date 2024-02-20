@@ -134,11 +134,11 @@
                 // Utilizza $service_id per recuperare la descrizione completa del servizio dal tuo database o da un array
                 // Ad esempio, puoi avere un array associativo con le descrizioni dei servizi
                 $services = [
-                    1 => "Testo aggiuntivo per il primo servizio.",
-                    2 => "Testo aggiuntivo per il secondo servizio.",
-                    3 => "Testo aggiuntivo per il terzo servizio.",
-                    4 => "Testo aggiuntivo per il quarto servizio.",
-                    5 => "Testo aggiuntivo per il quinto servizio.",
+                    1 => "Testo aggiuntivo riguardo il primo servizio.",
+                    2 => "Testo aggiuntivo  riguardo  il secondo servizio.",
+                    3 => "Testo aggiuntivo  riguardo il terzo servizio.",
+                    4 => "Testo aggiuntivo  riguardo il quarto servizio.",
+                    5 => "Testo aggiuntivo  riguardo il quinto servizio.",
                 ];
 
                
@@ -146,14 +146,14 @@
             ?>
                     
 
-                    <div class="servizio">
+                    <div class="servizio" id="D1">
                         
                         <span class="material-symbols-outlined">
                             home
                         </span>
                         <h5>Web Designer</h5>
 
-                        <div class="Descrizione" id="D1">
+                        <div class="Descrizione" >
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -174,13 +174,13 @@
 
                     </div>
 
-                    <div class="servizio">
+                    <div class="servizio" id="D2">
                         <span class="material-symbols-outlined">
                             home
                         </span>
                         <h5>Web Master</h5>
 
-                        <div class="Descrizione" id="D2">
+                        <div class="Descrizione" >
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -230,14 +230,14 @@
                     </div>
 
 
-                    <div class="servizio">
+                    <div class="servizio" id="D4">
                         <span class="material-symbols-outlined">
                             home
                         </span>
                         <h5>Backend Developer</h5>
 
 
-                        <div class="Descrizione" id="D4">
+                        <div class="Descrizione" >
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -258,13 +258,13 @@
                     </div>
 
 
-                    <div class="servizio">
+                    <div class="servizio" id="D5">
                         <span class="material-symbols-outlined">
                             home
                         </span>
                         <h5>Full-Stack Developer</h5>
 
-                        <div class="Descrizione" id="D5">
+                        <div class="Descrizione" >
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  

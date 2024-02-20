@@ -32,8 +32,10 @@
         background: $coloreNero;
         margin: 15px;
         position: relative;
-        overflow: hidden;
+        overflow-y: scroll;
         text-align: center;
+        transition: height 0.3s ease;
+        
 
         span {
             font-size: 45px;
@@ -58,6 +60,14 @@
             p {
                 margin-bottom: 20px;
             }
+            
+     
+
+            
+            
+            
+
+            
         }
 
         .button {
@@ -77,6 +87,8 @@
             }
         }
     }
+    
+    
 }
 
 // Stile per la sezione Servizi
