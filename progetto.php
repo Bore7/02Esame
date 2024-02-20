@@ -60,7 +60,7 @@ if (isset($_GET['progetto'])) {
             <h1>Portfolio</h1>
             <p><i>Nome Progetto: $titolo <br>
                     Ruolo nel Progetto: $ruolo <br>
-                    Quando si è concluso il progetto: $data <br>
+                    Quando si è concluso il progetto: $data_fine <br>
                 </i></p>
         </div>
     </section>
