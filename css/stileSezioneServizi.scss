@@ -130,8 +130,9 @@
                 background: $coloreNero;
                 margin: 15px;
                 position: relative;
-                overflow: hidden;
+                overflow-y: auto;
                 text-align: center;
+                
             }
         }
     }
