@@ -1,0 +1,23 @@
+/backend
+│   login.php
+│
+├───users
+│       manage_users.php
+│       add_user.php
+│       edit_user.php
+│       delete_user.php
+│
+├───categories
+│       manage_categories.php
+│       add_category.php
+│       edit_category.php
+│       delete_category.php
+│
+├───works
+│       manage_works.php
+│       add_work.php
+│       edit_work.php
+│       delete_work.php
+│
+└───includes
+        validation_functions.php

@@ -1,29 +1,26 @@
 <?php
-// CARICA IL FILE JSON DEI PROGETTI
-$progetti_json = file_get_contents('Lavori-progetti.json');
-$progetti = json_decode($progetti_json, true);
+session_start();
+require_once "backend/database.php"; // Assicurati di includere il file di connessione al database
 
-// VERIFICA SE PARAMETRO PROGETTO E STATO PASSATO
+// Verifica se il parametro "progetto" è stato passato nell'URL
 if (isset($_GET['progetto'])) {
+    // Pulisce e prepara il titolo del progetto dal parametro GET
     $progetto_selezionato = str_replace('_', ' ', $_GET['progetto']);
 
-    $progetto_trovato = null;
-    foreach ($progetti as $progetto) {
-        if ($progetto['titolo'] === $progetto_selezionato) {
-            $progetto_trovato = $progetto;
-            break;
-        }
-    }
+    // Esegui la query per ottenere i dettagli del progetto dal database
+    $query = "SELECT * FROM works WHERE titolo = '$progetto_selezionato'";
+    $result = $conn->query($query);
 
-    // SE IL PROGETTO E STATO TROVATO VISUALIZZA:
-    if ($progetto_trovato) {
-        $titolo = $progetto_trovato['titolo'];
-        $ruolo = $progetto_trovato['ruolo'];
-        $data_fine = $progetto_trovato['data_fine'];
-        $descrizione = $progetto_trovato['descrizione'];
-        $immagine = $progetto_trovato['immagine'];
+    // Verifica se il progetto è stato trovato nel database
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $titolo = $row['titolo'];
+        $ruolo = $row['ruolo'];
+        $data_fine = $row['data_fine'];
+        $descrizione = $row['descrizione'];
+        $immagine = $row['immagine'];
 
-        
+        // Visualizza i dettagli del progetto
         echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -66,10 +63,10 @@ if (isset($_GET['progetto'])) {
     </section>
     <section class="Progetto-Example">
         <div class="Cont-PE">
-            <img src="{$progetto['immagine']}" alt="$titolo" title="$titolo">
+            <img src="$immagine" alt="$titolo" title="$titolo">
             <div class="Descrizione-Pjc">
                 <h2>$titolo</h2>
-                <p>{$progetto['descrizione']}</p>
+                <p>$descrizione</p>
                 <a href="index.php#Contatti">Contatta per ricevere maggiori informazioni</a>
             </div>
         </div>
@@ -98,10 +95,11 @@ if (isset($_GET['progetto'])) {
 HTML;
 
     } else {
-        // Se il progetto non è stato trovato, visualizza un messaggio di errore
+        // Se il progetto non è stato trovato nel database, visualizza un messaggio di errore
         echo "Progetto non trovato.";
     }
 } else {
-// Se il parametro "progetto" non è stato passato, visualizza un messaggio di errore
-echo "Nessun progetto selezionato.";
+    // Se il parametro "progetto" non è stato passato nell'URL, visualizza un messaggio di errore
+    echo "Nessun progetto selezionato.";
 }
+?>

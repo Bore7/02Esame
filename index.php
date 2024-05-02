@@ -9,14 +9,17 @@
         <meta name="description" content="Sito Web Personale">
         <title>Sito Web Personale</title> 
         <link href="css/stile.min.css"  rel="stylesheet">
-        <link href="css/stileSezioneProgetti.min.css"  rel="stylesheet">
+        <link href="css/stileSezionePortfolio.min.css"  rel="stylesheet">
         <link href="css/stileSezioneServizi.min.css"  rel="stylesheet">
         <link href="css/stileSezioneForm.min.css"  rel="stylesheet"> 
-        <link href="css/stileSezioneAboutMe.min.css"  rel="stylesheet">
+        <link href="css/StileAboutMe.css"  rel="stylesheet">
         <link href="css/stileSezioneHome.min.css"  rel="stylesheet">
         <link href="css/stileSezioneFooter.min.css"  rel="stylesheet">
+        <link rel="stylesheet" href="css/StileCompetenze.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link libreria per le icone social-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- link libreria per le icone social-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        
         
 
     </head>
@@ -33,6 +36,8 @@
                 <a href="#AboutMe">About me</a>
                 <a href="#Portfolio">Portfolio</a>
                 <a href="#Contatti">Contatti</a>
+                <!-- Aggiungi il pulsante per accedere al backend -->
+                <a href="backend/login.php" class="backend-link">Area riservata</a>
 
             </nav>
 
@@ -46,304 +51,213 @@
       
 
         <section class="Home" id="Home">
-            
             <div class="Contenuto-home">
                 <h3>Full-Stack Developer</h3>
-                <div class="TitoloNome"><h1>Valerio </h1>
-                    <h1> Vignali</h1></div>
-            
-                
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum."
+                <div class="TitoloNome">
+                    <h1>Valerio</h1>
+                    <h1>Vignali</h1>
+                </div>
+                <p>
+                    Sono un appassionato full-stack developer con una forte passione per la creazione di soluzioni innovative e intuitive. Con competenze sia sul front-end che sul back-end, mi dedico a sviluppare esperienze utente coinvolgenti e funzionalità robuste. Lavoro con tecnologie all'avanguardia per trasformare le idee in realtà digitali, offrendo soluzioni su misura per le esigenze dei clienti.
                 </p>
             </div>
             <div class="Logo-Home">
-                <a href="#" class="sfondologo"><img src="img/Rombo-sfondo-logo.png" alt="sfondologo" title="sfondologo" class="rombo"><img src="img/Logo-V.png" alt="Logo V.V" title="V.V" class="logoVV" ></a>
-    
-
-
+                <a href="#" class="sfondologo">
+                    <img src="img/Rombo-sfondo-logo.png" alt="sfondologo" title="sfondologo" class="rombo">
+                    <img src="img/Logo-V.png" alt="Logo V.V" title="V.V" class="logoVV">
+                </a>
             </div>
-
-
         </section>
 
 
          <!-- Sezione About-Me -->
 
 
-        <section class="About-me" id="AboutMe">
+         <section class="About-me" id="AboutMe">
+            <div class="DivImg">
+                <img src="img/Programmatore.jpg" alt="Programmatore" title="About Me" width="700" height="1050" class="Programimg">
+            </div>
 
-            <div class="DivImg"><img src="img/Programmatore.jpg" alt="Programmatore" title="About Me" width="700" height="1050" class="Programimg"> </div>
-
-
-            
             <div class="Contenuto-Aboutme">
+                <div><h2>About Me</h2></div>
                 
-                <div > <h2>About Me</h2></div>
-                
-                
-                <div> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.
+                <div><p>
+                    Ciao, sono Valerio! Sono un appassionato di programmazione con una forte conoscenza dei linguaggi di programmazione web come HTML, CSS e PHP. La mia passione per la programmazione è stata coltivata attraverso il mio impegno nel perseguire una formazione accademica di alta qualità e nel perseguire certificazioni che dimostrano il mio livello di competenza. Ho ottenuto il livello C1 in inglese e ho conseguito diversi certificati accademici, tra cui matematica, fisica e statistica, grazie alla mia partecipazione al liceo internazionale.
+
+                    Pur non avendo esperienza lavorativa diretta nel campo, sono attualmente impegnato nel completamento di un corso di programmazione che mi ha fornito una solida base teorica e pratica. Sono motivato, diligente e sempre desideroso di imparare e crescere professionalmente nel mondo della programmazione.
+
+                    Fuori dall'ambito accademico, mi piace esplorare nuove tecnologie, partecipare a progetti open source e migliorare costantemente le mie abilità attraverso l'autoapprendimento e l'interazione con la community online. Sono entusiasta di mettere le mie competenze al servizio di progetti interessanti e collaborare con altri professionisti nel settore.
+
+                    Grazie per aver visitato il mio sito web portfolio. Non vedo l'ora di connetterci e discutere eventuali opportunità di collaborazione futura!
                 </p></div>
 
-                <!-- Sezione Linguaggi di Programmazione Preferiti -->
-                <div class="Preferiti">
-                    <h3>Linguaggi di Programmazione Preferiti</h3>
-                    <ul>
-                        <li><strong>HTML:</strong> HTML è il linguaggio standard per la creazione di pagine web.</li>
-                        <li><strong>CSS/SCSS:</strong> CSS (e SCSS) è utilizzato per lo stile e la formattazione delle pagine web.</li>
-                        <li><strong>PHP:</strong> PHP è un linguaggio di scripting ampiamente utilizzato per lo sviluppo web lato server.</li>
-                        <!-- Aggiungi altri linguaggi di programmazione preferiti con una breve descrizione -->
-                    </ul>
+                <!-- Call to Action -->
+                <div class="call-to-action">
+                    <p>Se sei interessato a collaborare o vuoi saperne di più, non esitare a contattarmi!</p>
+                    <a href="#form">Contact Me</a>
                 </div>
-
             </div>
         </section>
 
-        
-         <!-- Sezione Servizi -->
-        <section class="Servizi" id="Servizi">
 
-
-
+    
             
+        <section>
             <div class="servizi">
                 <div class="title">
                     <h2>Servizi</h2>
                 </div>
 
                 <div class="box">
+                    <?php
+                    // Array associativo con descrizioni brevi e estese per ciascun servizio
+                    $services = [
+                        1 => [
+                            'title' => 'Web Designer',
+                            'short' => 'Progettazione e realizzazione di interfacce grafiche moderne per siti web.',
+                            'extended' => 'Il servizio di Web Designer offre progettazione e realizzazione di interfacce grafiche moderne e intuitive per siti web, focalizzandosi sull\'esperienza utente e sull\'estetica.'
+                        ],
+                        2 => [
+                            'title' => 'Web Master',
+                            'short' => 'Gestione tecnica e operativa di siti web, configurazione server e database.',
+                            'extended' => 'Il servizio di Web Master include la gestione tecnica e operativa di siti web, configurazione di server, database e servizi di backend per garantire la funzionalità e l\'ottimizzazione delle risorse.'
+                        ],
+                        3 => [
+                            'title' => 'Frontend Developer',
+                            'short' => 'Sviluppo dell\'interfaccia utente per applicazioni web.',
+                            'extended' => 'Il servizio di Frontend Developer si occupa dello sviluppo dell\'interfaccia utente per applicazioni web, garantendo un\'esperienza utente ottimale attraverso un\'interfaccia intuitiva e moderna.'
+                        ],
+                        4 => [
+                            'title' => 'Backend Developer',
+                            'short' => 'Sviluppo e gestione della logica di backend per applicazioni web e sistemi informatici.',
+                            'extended' => 'Il servizio di Backend Developer si occupa dello sviluppo e della gestione della logica di backend per applicazioni web e sistemi informatici, implementando le funzionalità e la logica di business necessarie per garantire il corretto funzionamento delle applicazioni.'
+                        ],
+                        5 => [
+                            'title' => 'Full-Stack Developer',
+                            'short' => 'Sviluppo completo di applicazioni web, inclusi frontend, backend e integrazione di database.',
+                            'extended' => 'Il servizio di Full-Stack Developer offre uno sviluppo completo di applicazioni web, occupandosi sia del frontend che del backend, compresa l\'integrazione di database e servizi esterni per creare soluzioni web complete e funzionali.'
+                        ],
+                    ];
+                    ?>
 
-                <?php
-            // Controlla se il parametro service_id è stato fornito nella richiesta
-            if (isset($_GET['service_id'])) {
-                $service_id = $_GET['service_id'];
-
-                // Utilizza $service_id per recuperare la descrizione completa del servizio dal tuo database o da un array
-                // Ad esempio, puoi avere un array associativo con le descrizioni dei servizi
-                $services = [
-                    1 => "Testo aggiuntivo riguardo il primo servizio.
-                    <br><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.",
-                    2 => "Testo aggiuntivo  riguardo  il secondo servizio.
-                    <br><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.",
-                    3 => "Testo aggiuntivo  riguardo il terzo servizio.
-                    <br><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.",
-                    4 => "Testo aggiuntivo  riguardo il quarto servizio.
-                    <br><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.",
-                    5 => "Testo aggiuntivo  riguardo il quinto servizio.
-                    <br><br>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.",
-                ];
-
-               
-            }
-            ?>
-                    
-
-                    <div class="servizio" id="D1">
-                        
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <h5>Web Designer</h5>
-
-                        <div class="Descrizione" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                .</p>
-
+                    <?php foreach ($services as $service_id => $service) : ?>
+                        <div class="servizio" id="D<?php echo $service_id; ?>">
+                            <span class="material-symbols-outlined">home</span>
+                            <h5><?php echo $service['title']; ?></h5>
+                            <div class="Descrizione">
+                                <p><?php echo $service['short']; ?></p>
                                 <?php
-                            if (isset($_GET['service_id']) && $_GET['service_id'] == 1) {
-                                echo '<div class="additional-text">';
-                                echo '<p>' . $services[1] . '</p>';
-                                echo '</div>';
-                            }
-                            ?>
-                            
-                            <p style="text-align: center;">
-                            <a class="button" href="?service_id=1#D1">Read More</a></p>
-                        </div>
-
-
-                    </div>
-
-                    <div class="servizio" id="D2">
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <h5>Web Master</h5>
-
-                        <div class="Descrizione" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                            </p>
-
-                            <?php
-                            if (isset($_GET['service_id']) && $_GET['service_id'] == 2) {
-                                echo '<div class="additional-text">';
-                                echo '<p>' . $services[2] . '</p>';
-                                echo '</div>';
-                            }
-                            ?>
-                            
-                            <p style="text-align: center;">
-                            <a class="button" href="?service_id=2#D2">Read More</a></p>
-                        </div>
-
-                    </div>
-
-                    <div class="servizio" id="D3">
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <h5>Frontend Developer</h5>
-
-                        <div class="Descrizione">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                               </p>
-                            
-                            <?php
-                            if (isset($_GET['service_id']) && $_GET['service_id'] == 3) {
-                                echo '<div class="additional-text">';
-                                echo '<p>' . $services[3] . '</p>';
-                                echo '</div>';
-                            }
-                            ?>
-
-                            
-                            
-                            <p style="text-align: center;">
-                            <a class="button" href="?service_id=3#D3">Read More</a></p>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="servizio" id="D4">
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <h5>Backend Developer</h5>
-
-
-                        <div class="Descrizione" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                if (isset($_GET['service_id']) && $_GET['service_id'] == $service_id) {
+                                    echo '<div class="additional-text">';
+                                    echo '<p>' . $service['extended'] . '</p>';
+                                    echo '</div>';
+                                }
+                                ?>
+                                <p style="text-align: center;">
+                                    <a class="button" href="?service_id=<?php echo $service_id; ?>#D<?php echo $service_id; ?>">Read More</a>
                                 </p>
-                                <?php
-                            if (isset($_GET['service_id']) && $_GET['service_id'] == 4) {
-                                echo '<div class="additional-text">';
-                                echo '<p>' . $services[4] . '</p>';
-                                echo '</div>';
-                            }
-                            ?>
-                            
-                            <p style="text-align: center;">
-                            <a class="button" href="?service_id=4#D4">Read More</a></p>
+                            </div>
                         </div>
-
-
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+        
+        <section class="Competenze" id="Competenze">
+            <div class="container">
+                <h2 class="Sezione-Titolo">Le mie competenze</h2>
+                <div class="categorie">
+                    <div class="categoria categoria-frontend">
+                        <h3 class="categoria-titolo">Frontend Development</h3>
+                        <ul class="competenze-lista">
+                            <li><i class="fab fa-html5"></i> HTML5</li>
+                            <li><i class="fab fa-css3-alt"></i> CSS e SASS</li>
+                            <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                            <li><i class="fab fa-react"></i> React.js</li>
+                            <li><i class="fab fa-angular"></i> Angular</li>
+                            <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                            <li><i class="fab fa-js-square"></i> TypeScript</li>
+                        </ul>
                     </div>
-
-
-                    <div class="servizio" id="D5">
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <h5>Full-Stack Developer</h5>
-
-                        <div class="Descrizione" >
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
-                                </p>
-                                <?php
-                            if (isset($_GET['service_id']) && $_GET['service_id'] == 5) {
-                                echo '<div class="additional-text">';
-                                echo '<p>' . $services[5] . '</p>';
-                                echo '</div>';
-                            }
-                            ?>
-                            
-                            <p style="text-align: center;">
-                            <a class="button" href="?service_id=5#D5">Read More</a></p>
-                        </div>
-
-                        
-
-
+                    <div class="categoria categoria-backend">
+                        <h3 class="categoria-titolo">Backend Development</h3>
+                        <ul class="competenze-lista">
+                            <li><i class="fab fa-php"></i> PHP (Laravel)</li>
+                            <li><i class="fab fa-node"></i> Node.js</li>
+                            <li><i class="fab fa-python"></i> Python (Django)</li>
+                            <li><i class="fas fa-database"></i> MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="categoria categoria-altre">
+                        <h3 class="categoria-titolo">Altre Competenze</h3>
+                        <ul class="competenze-lista">
+                            <li><i class="fas fa-paint-brush"></i> Progettazione Grafica (Photoshop, Figma)</li>
+                            <li><i class="fas fa-cogs"></i> API (RESTful)</li>
+                            <li><i class="fab fa-react"></i> React Native</li>
+                            <li><i class="fab fa-react"></i> Redux</li>
+                            <li><i class="fas fa-bolt"></i> RxJS</li>
+                        </ul>
                     </div>
                 </div>
-
-
-                    
-                    
-                
             </div>
         </section>
 
+       
+
+        <script>
+            // Aggiungi effetto di animazione quando la sezione delle competenze è visibile
+            document.addEventListener("DOMContentLoaded", function () {
+                var competenzeSection = document.getElementById("Competenze");
+
+                function mostraSezioneCompetenze() {
+                    var rect = competenzeSection.getBoundingClientRect();
+                    var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                    if (rect.top <= windowHeight) {
+                        competenzeSection.classList.add("mostrato");
+                        window.removeEventListener("scroll", mostraSezioneCompetenze);
+                    }
+                }
+
+                window.addEventListener("scroll", mostraSezioneCompetenze);
+                mostraSezioneCompetenze();
+            });
+        </script>
 
 
+
+     
        <!-- Sezione Portfolio -->
 
-        <?php
-        $progetti_json = file_get_contents('Lavori-progetti.json');
-        $progetti = json_decode($progetti_json, true);
+       <?php
+        require_once "backend/database.php";
 
-        $ruoloSelezionato = isset($_GET['ruolo']) ? $_GET['ruolo'] : 'All';
+        // Esegui la query per ottenere tutti i progetti dal database, includendo l'ID della categoria
+        $query = "SELECT works.*, categories.category_name 
+                FROM works 
+                INNER JOIN categories ON works.category_id = categories.category_id";
+        $result = $conn->query($query);
 
-        function getRuoliUnici($progetti)
-        {
-            $ruoli = array_column($progetti, 'ruolo');
-            $ruoliUnici = array_unique($ruoli);
-            return $ruoliUnici;
+        // Verifica se ci sono progetti nel database
+        if ($result->num_rows > 0) {
+            $progetti = [];
+            // Estrai i dati dei progetti
+            while ($row = $result->fetch_assoc()) {
+                $progetto = [
+                    'titolo' => $row['titolo'],
+                    'immagine' => $row['immagine'],
+                    'categoria' => $row['category_name'],
+                    'data_fine' => $row['data_fine']
+                    // Aggiungi altre colonne se necessario
+                ];
+                $progetti[] = $progetto;
+            }
+        } else {
+            echo "Nessun progetto trovato nel database.";
+            exit; // Esci dallo script se non ci sono progetti nel database
         }
 
-        $ruoliUnici = getRuoliUnici($progetti);
+        $categoriaSelezionata = isset($_GET['categoria']) ? $_GET['categoria'] : 'All';
+        $categorieUniche = array_unique(array_column($progetti, 'categoria'));
         ?>
 
         <section class="Lavori" id="Portfolio">
@@ -351,28 +265,27 @@
                 <div class="Titolo-sezione-prj">
                     <h2 class="Quality-works-Progetti-Recenti">Quality works & Progetti Recenti</h2>
                 </div>
-                <h6><i>Ruolo nel progetto:</i></h6>
+                <h6><i>Categoria del progetto:</i></h6>
             </div>
 
             <div class="Bottoni-Lavori">
+                <a href="?categoria=All#Portfolio" class="<?= ($categoriaSelezionata == 'All' ? 'active' : '') ?>">All</a>
                 <?php
-                echo '<a href="?ruolo=All#Portfolio" class="' . ($ruoloSelezionato == 'All' ? 'active' : '') . '">All</a>';
-
-                foreach ($ruoliUnici as $ruolo) {
-                    echo '<a href="?ruolo=' . urlencode($ruolo) . '#Portfolio" class="' . ($ruoloSelezionato == $ruolo ? 'active' : '') . '">' . $ruolo . '</a>';
+                foreach ($categorieUniche as $categoria) {
+                    echo '<a href="?categoria=' . urlencode($categoria) . '#Portfolio" class="' . ($categoriaSelezionata == $categoria ? 'active' : '') . '">' . $categoria . '</a>';
                 }
                 ?>
             </div>
 
             <div class="row-grid">
                 <?php
-                if (isset($_GET['ruolo'])) {
-                    $ruoloSelezionato = $_GET['ruolo'];
-                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($ruoloSelezionato) {
-                        return $progetto['ruolo'] == $ruoloSelezionato;
+                if (isset($_GET['categoria'])) {
+                    $categoriaSelezionata = $_GET['categoria'];
+                    $progettiFiltrati = array_filter($progetti, function ($progetto) use ($categoriaSelezionata) {
+                        return $progetto['categoria'] == $categoriaSelezionata;
                     });
 
-                    if ($ruoloSelezionato == 'All' || empty($progettiFiltrati)) {
+                    if ($categoriaSelezionata == 'All' || empty($progettiFiltrati)) {
                         $progettiDaMostrare = $progetti;
                     } else {
                         $progettiDaMostrare = $progettiFiltrati;
@@ -392,7 +305,7 @@
                     echo '</a>';
                     echo '<div class="Titolo-pj">';
                     echo '<h4>' . $progetto['titolo'] . '</h4>';
-                    echo '<span class="Testo-secondario">' . $progetto['ruolo'] . '</span>';
+                    echo '<span class="Testo-secondario">' . $progetto['categoria'] . '</span>';
                     echo '<p>Data di fine: ' . $progetto['data_fine'] . '</p>';
                     echo '</div>';
                     echo '</div>';
@@ -456,13 +369,9 @@
 
 
         <footer>
-
-
             <a href="#" class="logo"><img src="img/Logo-V.png" alt="Logo V.V" title="V.V" height="80" width="80"></a>
-    
-     
+
             <div class="footer">
-               
                 <div class="Recapiti">
                     <p id="Contatti">Contatti</p>
                     <ul>
@@ -471,27 +380,15 @@
                         <li><a href="tel:+393319240001">+39 3318916653</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="ContattamiSu">
-        
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-linkedin"></a>
                     <a href="#" class="fa fa-google"></a>
-    
-                
-    
-    
-                    
-                   
+
                 </div>
-    
-               
             </div>
-            
-    
-    
-    
         </footer>
     
 

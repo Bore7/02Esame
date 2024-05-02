@@ -1,0 +1,15 @@
+project/
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+│
+└── backend/
+    ├── login.php
+    ├── manage_users.php
+    ├── manage_categories.php
+    ├── manage_works.php
+    └── database.php

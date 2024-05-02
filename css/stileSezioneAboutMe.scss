@@ -1,39 +1,44 @@
- /* -------------------------------------------------------------------    SEZIONE ABOUT-ME   -----------------------------------------------------------------------------------*/
-@import "Variabili";
+// Mixin per le query media
+@mixin media($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
 
-
-// PADDING CON MIXIN
-@mixin padding($top, $right, $bottom, $left) {
+// Padding con mixin
+@mixin padding($top, $right, $bottom: null, $left) {
     padding-top: $top;
     padding-right: $right;
-    padding-bottom: $bottom;
+    @if $bottom != null {
+        padding-bottom: $bottom;
+    }
     padding-left: $left;
 }
 
-// MMARGIN CON MIXIN
-@mixin margin($top, $right, $bottom, $left) {
+// Margin con mixin
+@mixin margin($top, $right, $bottom: null, $left) {
     margin-top: $top;
     margin-right: $right;
-    margin-bottom: $bottom;
+    @if $bottom != null {
+        margin-bottom: $bottom;
+    }
     margin-left: $left;
 }
 
-// 
+// Font size con mixin
 @mixin font-size($size) {
     font-size: $size;
 }
 
-// ESTENDO GLI STILI COMUNI PER GLI H
+// Estendi gli stili comuni per gli h
 %common-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 10000;
     text-align: center;
-    text-align: top;
-    vertical-align: middle;
     padding: 20px;
 }
 
-// ESTENDO ANCHE GLI STILI COMUNI PER I PARAGRAI
+// Estendi anche gli stili comuni per i paragrafi
 %common-paragraph {
     font-family: 'Monserrat', sans-serif;
     font-weight: bold;
@@ -41,7 +46,7 @@
     letter-spacing: 1px;
 }
 
-// ESTENDO GLI STILI COMUNI PER LE LISTE
+// Estendi gli stili comuni per le liste
 %common-list {
     font-size: 18px;
     font-weight: bold;
@@ -51,7 +56,7 @@
     padding-left: 25px;
     padding-top: 25px;
 
-    @include media(max-width, 1280px) {
+    @include media(1280px) {
         font-size: 16px;
         letter-spacing: 0.5px;
         padding-right: 20px;
@@ -73,7 +78,6 @@
         h3 {
             font-size: 24px;
             margin-bottom: 10px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         ul {
@@ -83,7 +87,6 @@
             li {
                 font-size: 20px;
                 margin-bottom: 5px;
-                font-family: 'Monserrat', sans-serif;
             }
         }
     }
@@ -94,7 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include padding(200px, 100px, 80px, 100px);
+    @include padding(200px, 100px, 0, 100px);
 
     .DivImg {
         margin: 0;
@@ -106,7 +109,7 @@
             height: auto;
             border-radius: 30px;
 
-            @include media(max-width, 1000px) {
+            @include media(1000px) {
                 display: flex;
                 height: 80%;
                 width: 80%;
@@ -125,7 +128,7 @@
             @extend %common-title;
             @include font-size(70px);
 
-            @include media(max-width, 1280px) {
+            @include media(1280px) {
                 @include font-size(60px);
             }
         }
@@ -133,9 +136,9 @@
         p {
             @extend %common-paragraph;
             @include font-size(20px);
-            @include padding(50px, 50px, 50px, 50px);
+            @include padding(50px, 50px, 30px, 50px); // Aggiunto spazio tra le righe del testo
 
-            @include media(max-width, 1280px) {
+            @include media(1280px) {
                 @include font-size(16px);
                 @include padding(5px, 15px, 5px, 15px);
             }
@@ -150,7 +153,7 @@
             }
         }
 
-        @include media(max-width, 1280px) {
+        @include media(1280px) {
             height: 20%;
             width: auto;
             @include font-size(30px);
@@ -158,8 +161,29 @@
             flex-direction: column;
         }
     }
+    
+    .call-to-action {
+        text-align: center;
+        margin-top: 50px;
+    
+        a {
+            text-decoration: none; /* Rimuovi la sottolineatura del link */
+            display: inline-block; /* Rendi il link un blocco per applicare il padding */
+            padding: 20px 40px; /* Aumenta il padding per rendere il link più grande */
+            font-size: 24px; /* Aumenta la dimensione del testo */
+            background-color: #f39c12; /* Cambiato colore di sfondo */
+            color: #ffffff;
+            border-radius: 10px; /* Aumenta il raggio del bordo per arrotondare gli angoli */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Aggiungi una transizione al cambio di colore */
+    
+            &:hover {
+                background-color: #e67e22; /* Cambiato colore di sfondo al passaggio del mouse */
+            }
+        }
+    }
 
-    @include media(max-width, 1280px) {
+    @include media(1280px) {
         margin:0;
         display: flex;
         flex-direction: column;
